@@ -189,7 +189,64 @@ export default function Home() {
           </div>
         </main>
       </div>
-      <div className="bg-white min-h-[200px]"></div>
+      <div className="bg-[#ebeff5] min-h-[200px] py-14">
+        <div className="max-w-[700px] m-auto">
+          <h3 className="text-2xl text-center font-semibold">
+            Fantastic features
+          </h3>
+          <p className="text-sm text-center mt-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor
+            sed tellus <br /> adipiscing egestas placerat. Condimentum tempor
+            lorem eu mi pretium nunc.
+          </p>
+          <div className="mt-7 text-white bg-black rounded-lg p-10 px-24">
+            <h3 className="text-2xl text-center font-semibold">
+              Our Membership <br />
+              is almost here
+            </h3>
+            <p className="text-sm text-center mb-7 mt-3">
+              Information and connections that help you execute and scale your
+              idea or business. stay informed about out launch and become our
+              first members.
+            </p>
+            <input
+              type="text"
+              placeholder="Fullname"
+              className="outline-none w-full text-sm bg-[#D9D9D940] p-3 rounded-md"
+            />
+            <input
+              type="text"
+              placeholder="Email address"
+              className="my-3 outline-none w-full text-sm bg-[#D9D9D940] p-3 rounded-md"
+            />
+            <button className="w-full text-sm text-white bg-primary font-medium px-7 py-3.5 rounded-md">
+              Join the waitlist
+            </button>
+          </div>
+          <div className="mt-8 grid grid-cols-3 gap-5">
+            {features
+              .filter((_, idx) => idx < 3)
+              .map((item, idx) => (
+                <div className="flex items-start gap-2" key={idx}>
+                  <Image
+                    src={item.img}
+                    width={35}
+                    height={35}
+                    alt={item.title}
+                    className="mt-2"
+
+                  />
+                  <div>
+                    <p className="my-3 font-semibold">{item.title}</p>
+                    <p className="text-[10px] mb-3 text-slate-400">
+                      {item.content}
+                    </p>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
