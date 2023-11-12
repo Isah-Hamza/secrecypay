@@ -21,10 +21,13 @@ import country3 from "./assets/images/country3.png";
 import country4 from "./assets/images/country4.png";
 import country5 from "./assets/images/country5.png";
 import country6 from "./assets/images/country6.png";
+import plus from "./assets/images/plus.png";
+
 import { useState } from "react";
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState(1);
+  const [activeFaq, setActiveFaq] = useState(0);
   const features = [
     {
       title: "Feature",
@@ -283,14 +286,14 @@ export default function Home() {
       </div>
       <div className="max-w-[1200px] m-auto px-5 text-white py-16">
         <h3 className="text-3xl font-semibold ">Have a Question?</h3>
-        <p className="text-slate-600 text-sm mb-10">
+        <p className="text-slate-400 text-sm mb-10">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
-        <div className="mt-10 flex gap-10">
+        <div className="mt-10 flex items-start gap-20 max-w-5xl m-auto">
           <div className="grid gap-5">
             {categories.map((item, idx) => (
               <button
-                className={`px-5 py-3 rounded-md text-sm ${
+                className={`px-7 py-3 rounded-md text-sm ${
                   activeCategory == idx && "bg-[#191919] text-white"
                 }`}
               >
@@ -300,9 +303,28 @@ export default function Home() {
           </div>
           <div>
             {faqs.map((item, idx) => (
-              <div key={idx} className="border-b py-2">
-                <p>{item.q}</p>
-                <p>{item.a}</p>
+              <div
+                onClick={() => setActiveFaq(idx)}
+                key={idx}
+                className="mb-3 cursor-pointer border-b border-slate-800 py-2"
+              >
+                <div className="mb-2 flex items-center justify-between gap-10">
+                  <p className="font-medium">{item.q}</p>
+                  <Image
+                    src={plus}
+                    width={10}
+                    height={10}
+                    alt={'plus'}
+                    className={`${activeFaq == idx} && 'origin-center rotate-45'`}
+                  />
+                </div>
+                <p
+                  className={`pb-2 text-sm text-slate-300 ${
+                    activeFaq !== idx && "hidden"
+                  }`}
+                >
+                  {item.a}
+                </p>
               </div>
             ))}
           </div>
