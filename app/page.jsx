@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import logo from "@/app/assets/images/logo.png";
 import black_arrow from "@/app/assets/images/arrow-right-black.png";
@@ -19,8 +21,10 @@ import country3 from "./assets/images/country3.png";
 import country4 from "./assets/images/country4.png";
 import country5 from "./assets/images/country5.png";
 import country6 from "./assets/images/country6.png";
+import { useState } from "react";
 
 export default function Home() {
+  const [activeCategory, setActiveCategory] = useState(1);
   const features = [
     {
       title: "Feature",
@@ -62,6 +66,37 @@ export default function Home() {
     country4,
     country5,
     country6,
+  ];
+
+  const categories = [
+    "General",
+    "Transactions",
+    "Payment",
+    "Returns",
+    "Careers",
+  ];
+
+  const faqs = [
+    {
+      q: "What is Secrecy Pay and how do I use it?",
+      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+    },
+    {
+      q: "What is Secrecy Pay and how do I use it?",
+      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+    },
+    {
+      q: "What is Secrecy Pay and how do I use it?",
+      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+    },
+    {
+      q: "What is Secrecy Pay and how do I use it?",
+      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+    },
+    {
+      q: "What is Secrecy Pay and how do I use it?",
+      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+    },
   ];
 
   return (
@@ -200,7 +235,7 @@ export default function Home() {
             lorem eu mi pretium nunc.
           </p>
           <div className="mt-7 text-white bg-black rounded-lg p-10 px-24">
-            <h3 className="text-2xl text-center font-semibold">
+            <h3 className="text-3xl text-center font-semibold tracking-wider leading-9">
               Our Membership <br />
               is almost here
             </h3>
@@ -234,7 +269,6 @@ export default function Home() {
                     height={35}
                     alt={item.title}
                     className="mt-2"
-
                   />
                   <div>
                     <p className="my-3 font-semibold">{item.title}</p>
@@ -244,6 +278,33 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+          </div>
+        </div>
+      </div>
+      <div className="max-w-[1200px] m-auto px-5 text-white py-16">
+        <h3 className="text-3xl font-semibold ">Have a Question?</h3>
+        <p className="text-slate-600 text-sm mb-10">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <div className="mt-10 flex gap-10">
+          <div className="grid gap-5">
+            {categories.map((item, idx) => (
+              <button
+                className={`px-5 py-3 rounded-md text-sm ${
+                  activeCategory == idx && "bg-[#191919] text-white"
+                }`}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+          <div>
+            {faqs.map((item, idx) => (
+              <div key={idx} className="border-b py-2">
+                <p>{item.q}</p>
+                <p>{item.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
