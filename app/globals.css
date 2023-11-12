@@ -2,3 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+.join-btn {
+  background: linear-gradient(
+    83.08deg,
+    #45f5a1 7.34%,
+    rgba(69, 245, 161, 0.48) 92.07%
+  );
+}
+
+.hero {
+  background: url(./assets/images/Dots.png);
+}
+
+.req-to-join-btn {
+  background: linear-gradient(
+      83.08deg,
+      #45f5a1 7.34%,
+      rgba(69, 245, 161, 0.48) 92.07%
+    ),
+    linear-gradient(0deg, rgba(69, 245, 161, 0.12), rgba(69, 245, 161, 0.12));
+    /* border: 11px solid #45F5A11F; */
+    border: 11px solid rgb(25, 37, 25);
+}
