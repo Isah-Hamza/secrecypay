@@ -4,12 +4,50 @@ import black_arrow from "@/app/assets/images/arrow-right-black.png";
 import white_arrow from "@/app/assets/images/arrow-right-white.png";
 import right_ellipse from "@/app/assets/images/right-ellipse.png";
 import left_ellipse from "@/app/assets/images/left-ellipse.png";
+import feature1 from "./assets/images/feature1.png";
+import feature2 from "./assets/images/feature2.png";
+import feature3 from "./assets/images/feature3.png";
+import feature4 from "./assets/images/feature4.png";
+import feature5 from "./assets/images/feature5.png";
 
 export default function Home() {
+  const features = [
+    {
+      title: "Feature",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+      img: feature1,
+    },
+    {
+      title: "Feature",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+      img: feature2,
+    },
+    {
+      title: "Feature",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+      img: feature3,
+    },
+    {
+      title: "Feature",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+      img: feature4,
+    },
+    {
+      title: "Feature",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+      img: feature5,
+    },
+  ];
+
   return (
-    <div className=" bg-black min-h-screen">
+    <div className="relative min-h-screen pb-10">
       <div className="max-w-[1200px] m-auto px-5 text-white">
-        <header className="flex justify-between items-center py-5">
+        <header className="flex justify-between items-center py-10">
           <div className="flex items-center gap-1 ">
             <Image src={logo} alt="logo" width={20} height={30} />
             <span>SECRECY PAY</span>
@@ -19,8 +57,19 @@ export default function Home() {
             JOIN
           </button>
         </header>
-        <main className="relative flex items-center">
-          <Image />
+        <main className="h-full flex flex-col">
+          <Image
+            src={left_ellipse}
+            height={100}
+            width={450}
+            className="absolute top-[-100px] left-0"
+          />
+          <Image
+            src={right_ellipse}
+            height={100}
+            width={400}
+            className="absolute top-[-70px] right-0"
+          />
           <div className="hero min-h-[550px] w-[95%] m-auto flex items-center">
             <div className="flex flex-col gap-5">
               <div className="flex gap-2 items-center text-primary text-xs font-medium">
@@ -45,6 +94,31 @@ export default function Home() {
                 </button>
               </div>
             </div>
+          </div>
+          <div className="features grid grid-cols-3 gap-5">
+            <div>
+              <h4 className="font-semibold leading-10 mb-3 text-4xl">
+                Fantastic <br /> features
+              </h4>
+              <p className="text-slate-400">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Porttitor sed tellus massa adipiscing egestas placerat.
+                Condimentum tempor lorem eu mi pretium nunc.
+              </p>
+            </div>
+            {features.map((item, idx) => (
+              <div
+                className="feature transition-all duration-150 ease-linear cursor-pointer p-5"
+                key={idx}
+              >
+                <Image src={item.img} width={50} height={50} alt={item.title} />
+                <p className="my-5">{item.title}</p>
+                <p className="mb-3 text-slate-400">{item.content}</p>
+                <button className="text-primary underline text-sm">
+                  Learn more
+                </button>
+              </div>
+            ))}
           </div>
         </main>
       </div>

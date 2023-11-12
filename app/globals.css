@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-black;
+}
+
 .join-btn {
   background: linear-gradient(
     83.08deg,
@@ -21,6 +25,21 @@
       rgba(69, 245, 161, 0.48) 92.07%
     ),
     linear-gradient(0deg, rgba(69, 245, 161, 0.12), rgba(69, 245, 161, 0.12));
-    /* border: 11px solid #45F5A11F; */
-    border: 11px solid rgb(25, 37, 25);
+  /* border: 11px solid #45F5A11F; */
+  border: 11px solid rgb(25, 37, 25);
+}
+
+.features .feature {
+  background: linear-gradient(180deg, #131a14 0%, rgba(19, 26, 20, 0) 100%);
+}
+
+.features .feature:hover {
+  scale: 105%;
+  background: linear-gradient(45.84deg, #131a14 1.97%, #253426 97.02%);
+  box-shadow: -40px 24px 64px 0px #000000d9;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.features > div.feature:nth-of-type(1){
+  margin-top: 50px;
 }
