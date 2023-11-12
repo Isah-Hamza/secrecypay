@@ -9,6 +9,10 @@ import feature2 from "./assets/images/feature2.png";
 import feature3 from "./assets/images/feature3.png";
 import feature4 from "./assets/images/feature4.png";
 import feature5 from "./assets/images/feature5.png";
+import logo1 from "./assets/images/logo1.png";
+import logo2 from "./assets/images/logo2.png";
+import logo3 from "./assets/images/logo3.png";
+import logo4 from "./assets/images/logo4.png";
 
 export default function Home() {
   const features = [
@@ -43,11 +47,12 @@ export default function Home() {
       img: feature5,
     },
   ];
+  const logos = [logo1, logo2, logo3, logo4];
 
   return (
     <div className="relative min-h-screen pb-10">
       <div className="max-w-[1200px] m-auto px-5 text-white">
-        <header className="flex justify-between items-center py-10">
+        <header className="relative z-20 flex justify-between items-center py-10">
           <div className="flex items-center gap-1 ">
             <Image src={logo} alt="logo" width={20} height={30} />
             <span>SECRECY PAY</span>
@@ -70,7 +75,7 @@ export default function Home() {
             width={400}
             className="absolute top-[-70px] right-0"
           />
-          <div className="hero min-h-[550px] w-[95%] m-auto flex items-center">
+          <div className="relative z-20 hero min-h-[550px] w-[95%] m-auto flex items-center">
             <div className="flex flex-col gap-5">
               <div className="flex gap-2 items-center text-primary text-xs font-medium">
                 <p>SAFE //</p>
@@ -88,37 +93,50 @@ export default function Home() {
                   <span>Request to join</span>
                   <Image src={black_arrow} alt="arrow" width={10} height={6} />
                 </button>
-                <button className="text-white border border-white font-semibold px-7 py-3.5 rounded-3xl flex items-center gap-3">
+                <button className="text-sm text-white border border-white font-semibold px-7 py-3.5 rounded-3xl flex items-center gap-3">
                   <span>LEARN MORE</span>
                   <Image src={white_arrow} alt="arrow" width={10} height={6} />
                 </button>
               </div>
             </div>
           </div>
-          <div className="features grid grid-cols-3 gap-5">
-            <div>
+          <div className="relative z-20 features grid grid-cols-3 gap-5">
+            <div className="px-2">
               <h4 className="font-semibold leading-10 mb-3 text-4xl">
                 Fantastic <br /> features
               </h4>
-              <p className="text-slate-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              <p className="text-slate-400 text-[15px]">
+                Lorem ipsum dolor sit amet, conse ctetur adipi scing elit.
                 Porttitor sed tellus massa adipiscing egestas placerat.
                 Condimentum tempor lorem eu mi pretium nunc.
               </p>
             </div>
             {features.map((item, idx) => (
               <div
-                className="feature transition-all duration-150 ease-linear cursor-pointer p-5"
+                className={`feature-${
+                  idx + 1
+                } feature transition-all duration-300 ease-linear cursor-pointer p-5 px-10 rounded`}
                 key={idx}
               >
                 <Image src={item.img} width={50} height={50} alt={item.title} />
-                <p className="my-5">{item.title}</p>
-                <p className="mb-3 text-slate-400">{item.content}</p>
+                <p className="my-3">{item.title}</p>
+                <p className="text-sm mb-3 text-slate-400">{item.content}</p>
                 <button className="text-primary underline text-sm">
                   Learn more
                 </button>
               </div>
             ))}
+          </div>
+          <div className="relative z-20 mt-28 flex justify-center items-center gap-14">
+            {logos.map((item, idx) => (
+              <Image key={idx} src={item} width={120} height={30} alt="logo" />
+            ))}
+          </div>
+          <div className="mt-28">
+            <p className="text-lg text-slate-400">Available in these countries</p>
+            <div className="flex items-center gap-10 justify-between">
+              
+            </div>
           </div>
         </main>
       </div>
