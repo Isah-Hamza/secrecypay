@@ -153,21 +153,21 @@ export default function Home() {
               width={400}
               className="absolute top-[-70px] right-0"
             />
-            <div className="relative z-20 hero min-h-[550px] w-[97%] m-auto flex items-center">
+            <div className="relative z-20 hero min-h-[550px] w-full sm:w-[97%] m-auto flex items-center">
               <div className="flex flex-col gap-5">
                 <div className="flex gap-2 items-center text-primary text-xs font-medium">
                   <p>SAFE //</p>
                   <p>SECURE //</p>
                   <p>PRIVATE.</p>
                 </div>
-                <div className="text-6xl my-3">
+                <div className="text-4xl md:text-6xl my-3">
                   <p>Buy & sell crypto</p>
                   <p className="font-semibold mt-3">
                     fast <span className="font-normal">& </span> secure.
                   </p>
                 </div>
-                <div className="flex gap-10 items-center">
-                  <button className="req-to-join-btn font-semibold px-7 py-3.5 rounded-3xl text-black flex items-center gap-3">
+                <div className="flex gap-3 sm:gap-10 items-center">
+                  <button className="req-to-join-btn font-semibold px-3 sm:px-7 py-3.5 rounded-3xl text-black flex items-center gap-3">
                     <span>Request to join</span>
                     <Image
                       src={black_arrow}
@@ -176,7 +176,7 @@ export default function Home() {
                       height={6}
                     />
                   </button>
-                  <button className="text-sm text-white border border-white font-semibold px-7 py-3.5 rounded-3xl flex items-center gap-3">
+                  <button className="text-sm text-white border border-white font-semibold px-3 sm:px-7 py-3.5 rounded-3xl flex items-center gap-3">
                     <span>LEARN MORE</span>
                     <Image
                       src={white_arrow}
@@ -235,7 +235,7 @@ export default function Home() {
               <p className="text-lg text-slate-500 text-center">
                 Available in these countries
               </p>
-              <div className="flex items-center justify-center gap-10 mt-10">
+              <div className="flex items-center justify-center gap-5 md:gap-10 mt-10">
                 {countries.map((item, idx) => (
                   <Image
                     key={idx}
@@ -385,9 +385,9 @@ export default function Home() {
         </div>
       </div>
       <footer className="bg-primary mt-48">
-        <div className="max-w-[1200px] m-auto px-5 py-20 flex justify-between items-center">
+        <div className="max-w-[1200px] m-auto px-5 py-20 flex gap-10 flex-col md:flex-row justify-between md:items-center">
           <div className="">
-            <div className="text-5xl my-3">
+            <div className="text-4xl md:text-5xl my-3">
               <p>Buy & sell crypto</p>
               <p className="font-semibold mt-3">
                 fast <span className="font-normal">& </span> secure.
