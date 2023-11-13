@@ -14,8 +14,13 @@ body {
   );
 }
 
-.hero {
+.hero,
+.faqs {
   background: url(./assets/images/Dots.png);
+}
+
+.faqs {
+  background-origin: padding-box;
 }
 
 .req-to-join-btn {
@@ -29,29 +34,37 @@ body {
   border: 11px solid rgb(25, 37, 25);
 }
 
-.features .feature {
+.req-to-join-btn-black {
+  border: 7px solid #5c4e4e;
+}
+
+.features .feature,
+.resources .resource {
   background: linear-gradient(180deg, #131a14 0%, rgba(19, 26, 20, 0) 100%);
 }
 
-.features .feature:hover {
+.features .feature:hover,
+.resources .resource:hover {
   scale: 105%;
   background: linear-gradient(45.84deg, #131a14 1.97%, #253426 97.02%);
   box-shadow: -40px 24px 64px 0px #000000d9;
   box-shadow: 0px 4px 4px 0px #00000040;
 }
 
-.feature-1{
+.feature-1,
+.resource-2 {
   margin-top: 20px;
 }
 
-.feature-2{
+.feature-2,
+.resource-3 {
   margin-top: 40px;
 }
 
-.feature-4{
+.feature-4 {
   margin-top: 20px;
 }
 
-.feature-5{
+.feature-5 {
   margin-top: 40px;
 }

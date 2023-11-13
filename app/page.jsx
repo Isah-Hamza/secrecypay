@@ -60,6 +60,26 @@ export default function Home() {
       img: feature5,
     },
   ];
+  const resources = [
+    {
+      title: "Title",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+      img: feature1,
+    },
+    {
+      title: "Feature",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+      img: feature2,
+    },
+    {
+      title: "Feature",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+      img: feature3,
+    },
+  ];
   const logos = [logo1, logo2, logo3, logo4];
 
   const countries = [
@@ -103,7 +123,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative min-h-screen pb-10">
+    <div className="relative min-h-screen">
       <div className="bg-black text-white pb-14">
         <header className="max-w-[1200px] m-auto px-5 relative z-20 flex justify-between items-center py-10">
           <div className="flex items-center gap-1 ">
@@ -284,52 +304,102 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="max-w-[1200px] m-auto px-5 text-white py-16">
-        <h3 className="text-3xl font-semibold ">Have a Question?</h3>
-        <p className="text-slate-400 text-sm mb-10">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <div className="mt-10 flex items-start gap-20 max-w-5xl m-auto">
-          <div className="grid gap-5">
-            {categories.map((item, idx) => (
-              <button
-                className={`px-7 py-3 rounded-md text-sm ${
-                  activeCategory == idx && "bg-[#191919] text-white"
-                }`}
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-          <div>
-            {faqs.map((item, idx) => (
-              <div
-                onClick={() => setActiveFaq(idx)}
-                key={idx}
-                className="mb-3 cursor-pointer border-b border-slate-800 py-2"
-              >
-                <div className="mb-2 flex items-center justify-between gap-10">
-                  <p className="font-medium">{item.q}</p>
-                  <Image
-                    src={plus}
-                    width={10}
-                    height={10}
-                    alt={'plus'}
-                    className={`${activeFaq == idx} && 'origin-center rotate-45'`}
-                  />
-                </div>
-                <p
-                  className={`pb-2 text-sm text-slate-300 ${
-                    activeFaq !== idx && "hidden"
+      <div className="px-5 text-white my-16 max-w-[1200px] mx-auto">
+        <div className="faqs ">
+          <h3 className="text-3xl font-semibold ">Have a Question?</h3>
+          <p className="text-slate-400 text-sm mb-10">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <div className="mt-10 flex items-start gap-20 max-w-5xl m-auto">
+            <div className="grid gap-5">
+              {categories.map((item, idx) => (
+                <button
+                  onClick={() => setActiveCategory(idx)}
+                  className={`px-7 py-3 rounded-md text-sm ${
+                    activeCategory == idx && "bg-[#191919] text-white"
                   }`}
                 >
-                  {item.a}
-                </p>
+                  {item}
+                </button>
+              ))}
+            </div>
+            <div>
+              {faqs.map((item, idx) => (
+                <div
+                  onClick={() => setActiveFaq(idx)}
+                  key={idx}
+                  className="mb-3 cursor-pointer border-b border-slate-800 py-2"
+                >
+                  <div className="mb-2 flex items-center justify-between gap-10">
+                    <p className="font-medium">{item.q}</p>
+                    <Image
+                      src={plus}
+                      width={10}
+                      height={10}
+                      alt={"plus"}
+                      className={`${
+                        activeFaq == idx
+                      } && 'origin-center rotate-45'`}
+                    />
+                  </div>
+                  <p
+                    className={`pb-2 text-sm text-slate-300 ${
+                      activeFaq !== idx && "hidden"
+                    }`}
+                  >
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="resources mt-20">
+          <h3 className="text-[26px] font-semibold ">Resources</h3>
+          <p className="text-slate-400 text-sm mb-10">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <div className="relative z-20 resources grid grid-cols-3 gap-5">
+            {resources.map((item, idx) => (
+              <div
+                className={`resource-${
+                  idx + 1
+                } resource transition-all duration-300 ease-linear cursor-pointer p-5 px-10 rounded`}
+                key={idx}
+              >
+                <Image src={item.img} width={50} height={50} alt={item.title} />
+                <p className="my-3">{item.title}</p>
+                <p className="text-sm mb-3 text-slate-400">{item.content}</p>
+                <button className="text-primary underline text-sm">
+                  Learn more
+                </button>
               </div>
             ))}
           </div>
         </div>
       </div>
+      <footer className="bg-primary mt-48">
+        <div className="max-w-[1200px] m-auto px-5 py-20 flex justify-between items-center">
+          <div className="">
+            <div className="text-5xl my-3">
+              <p>Buy & sell crypto</p>
+              <p className="font-semibold mt-3">
+                fast <span className="font-normal">& </span> secure.
+              </p>
+            </div>
+            <p className="text-sm max-w-sm mt-3">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor
+              sed tellus massa adipiscing egestas placerat. Condimentum tempor
+              lorem eu mi pretium nunc.
+            </p>
+          </div>
+          <div className="flex gap-10 items-center">
+            <button className="req-to-join-btn-black text-center font-semibold px-7 py-2.5 rounded-2xl text-white bg-black flex items-center gap-3">
+              <span>Request to join</span>
+            </button>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
