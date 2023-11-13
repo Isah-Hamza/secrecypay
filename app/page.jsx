@@ -140,14 +140,14 @@ export default function Home() {
         <main className="max-w-[1200px] px-5 m-auto h-full flex flex-col">
           <div className="">
             <Image
-            alt="arrow"
+              alt="arrow"
               src={left_ellipse}
               height={100}
               width={450}
               className="absolute top-[-100px] left-0"
             />
             <Image
-            alt="arrow"
+              alt="arrow"
               src={right_ellipse}
               height={100}
               width={400}
@@ -291,6 +291,7 @@ export default function Home() {
               .map((item, idx) => (
                 <div className="flex items-start gap-2" key={idx}>
                   <Image
+                    key={idx}
                     src={item.img}
                     width={35}
                     height={35}
@@ -318,6 +319,7 @@ export default function Home() {
             <div className="grid gap-5">
               {categories.map((item, idx) => (
                 <button
+                key={idx}
                   onClick={() => setActiveCategory(idx)}
                   className={`px-7 py-3 rounded-md text-sm ${
                     activeCategory == idx && "bg-[#191919] text-white"
