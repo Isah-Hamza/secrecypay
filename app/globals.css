@@ -68,3 +68,10 @@ body {
 .feature-5 {
   margin-top: 40px;
 }
+
+@media screen and (max-width: 768px) {
+  .feature-2,
+  .resource-3 {
+    margin-top: 20px;
+  }
+}

@@ -220,7 +220,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="relative z-20 features grid gap-5">
+            <div className="relative z-20 features grid md:hidden gap-5">
               <div className="px-2">
                 <h4 className="font-semibold leading-10 mb-3 text-4xl">
                   Fantastic <br /> features
@@ -256,7 +256,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="relative z-20 mt-16 md:mt-28 flex justify-center items-center gap-2 md:gap-14">
+            <div className="overflow-x-auto relative z-20 mt-16 md:mt-28 flex justify-center items-center gap-5 md:gap-14">
               {logos.map((item, idx) => (
                 <Image
                   key={idx}
@@ -352,7 +352,7 @@ export default function Home() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
           <div className="mt-10 flex flex-col md:flex-row md:items-start gap-20 max-w-5xl m-auto">
-            <div className="overflow-x-auto flex md:grid gap-5">
+            <div className="overflow-x-auto md:w-[400px] flex md:grid gap-5">
               {categories.map((item, idx) => (
                 <button
                   key={idx}
@@ -401,7 +401,7 @@ export default function Home() {
           <p className="text-slate-400 text-sm mb-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
-          <div className="relative z-20 resources grid grid-cols-3 gap-5">
+          <div className="relative z-20 resources grid grid-cols-1 md:grid-cols-3 gap-5">
             {resources.map((item, idx) => (
               <div
                 className={`resource-${
