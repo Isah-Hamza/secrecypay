@@ -140,12 +140,14 @@ export default function Home() {
         <main className="max-w-[1200px] px-5 m-auto h-full flex flex-col">
           <div className="">
             <Image
+            alt="arrow"
               src={left_ellipse}
               height={100}
               width={450}
               className="absolute top-[-100px] left-0"
             />
             <Image
+            alt="arrow"
               src={right_ellipse}
               height={100}
               width={400}
