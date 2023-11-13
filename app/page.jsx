@@ -11,10 +11,12 @@ import feature2 from "./assets/images/feature2.png";
 import feature3 from "./assets/images/feature3.png";
 import feature4 from "./assets/images/feature4.png";
 import feature5 from "./assets/images/feature5.png";
+
 import logo1 from "./assets/images/logo1.png";
 import logo2 from "./assets/images/logo2.png";
 import logo3 from "./assets/images/logo3.png";
 import logo4 from "./assets/images/logo4.png";
+
 import country1 from "./assets/images/country1.png";
 import country2 from "./assets/images/country2.png";
 import country3 from "./assets/images/country3.png";
