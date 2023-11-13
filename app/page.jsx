@@ -188,7 +188,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative z-20 features grid grid-cols-3 gap-5">
+            <div className="hidden relative z-20 features md:grid grid-cols-3 gap-5">
               <div className="px-2">
                 <h4 className="font-semibold leading-10 mb-3 text-4xl">
                   Fantastic <br /> features
@@ -220,7 +220,43 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="relative z-20 mt-28 flex justify-center items-center gap-14">
+            <div className="relative z-20 features grid gap-5">
+              <div className="px-2">
+                <h4 className="font-semibold leading-10 mb-3 text-4xl">
+                  Fantastic <br /> features
+                </h4>
+                <p className="text-slate-400 text-[15px]">
+                  Lorem ipsum dolor sit amet, conse ctetur adipi scing elit.
+                  Porttitor sed tellus massa adipiscing egestas placerat.
+                  Condimentum tempor lorem eu mi pretium nunc.
+                </p>
+              </div>
+              <div className="">
+                {features.map((item, idx) => (
+                  <div
+                    className={`feature-${
+                      idx + 1
+                    } mb-5 feature transition-all duration-300 ease-linear cursor-pointer p-5 px-10 rounded`}
+                    key={idx}
+                  >
+                    <Image
+                      src={item.img}
+                      width={50}
+                      height={50}
+                      alt={item.title}
+                    />
+                    <p className="my-3">{item.title}</p>
+                    <p className="text-sm mb-3 text-slate-400">
+                      {item.content}
+                    </p>
+                    <button className="text-primary underline text-sm">
+                      Learn more
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative z-20 mt-16 md:mt-28 flex justify-center items-center gap-2 md:gap-14">
               {logos.map((item, idx) => (
                 <Image
                   key={idx}
@@ -235,7 +271,7 @@ export default function Home() {
               <p className="text-lg text-slate-500 text-center">
                 Available in these countries
               </p>
-              <div className="flex items-center justify-center gap-5 md:gap-10 mt-10">
+              <div className="overflow-x-auto flex items-center justify-center gap-5 md:gap-10 mt-10">
                 {countries.map((item, idx) => (
                   <Image
                     key={idx}
@@ -251,7 +287,7 @@ export default function Home() {
           </div>
         </main>
       </div>
-      <div className="bg-[#ebeff5] min-h-[200px] py-14">
+      <div className="bg-[#ebeff5] min-h-[200px] px-5 md:px-0 py-14">
         <div className="max-w-[700px] m-auto">
           <h3 className="text-2xl text-center font-semibold">
             Fantastic features
@@ -261,7 +297,7 @@ export default function Home() {
             sed tellus <br /> adipiscing egestas placerat. Condimentum tempor
             lorem eu mi pretium nunc.
           </p>
-          <div className="mt-7 text-white bg-black rounded-lg p-10 px-24">
+          <div className="mt-7 text-white bg-black rounded-lg p-5 md:p-10 md:px-24">
             <h3 className="text-3xl text-center font-semibold tracking-wider leading-9">
               Our Membership <br />
               is almost here
@@ -315,11 +351,11 @@ export default function Home() {
           <p className="text-slate-400 text-sm mb-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
-          <div className="mt-10 flex items-start gap-20 max-w-5xl m-auto">
-            <div className="grid gap-5">
+          <div className="mt-10 flex flex-col md:flex-row md:items-start gap-20 max-w-5xl m-auto">
+            <div className="overflow-x-auto flex md:grid gap-5">
               {categories.map((item, idx) => (
                 <button
-                key={idx}
+                  key={idx}
                   onClick={() => setActiveCategory(idx)}
                   className={`px-7 py-3 rounded-md text-sm ${
                     activeCategory == idx && "bg-[#191919] text-white"
