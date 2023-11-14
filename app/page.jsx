@@ -420,7 +420,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <footer className="bg-primary mt-48">
+      <div className="bg-primary mt-48">
         <div className="max-w-[1200px] m-auto px-5 py-20 flex gap-10 flex-col md:flex-row justify-between md:items-center">
           <div className="">
             <div className="text-4xl md:text-5xl my-3">
@@ -441,6 +441,53 @@ export default function Home() {
             </button>
           </div>
         </div>
+      </div>
+      <footer className="text-white pt-14 pb-5">
+        <div className="text-sm flex flex-wrap justify-between gap-10 max-w-[1200px] px-5 m-auto">
+          <div className="">
+            <div className="flex items-center gap-1 ">
+              <Image src={logo} alt="logo" width={20} height={30} />
+              <span>SECRECY PAY</span>
+            </div>
+            <p className="max-w-xs text-sm mt-2 ">
+              Lorem ipsum dolor sit amet, conse ctetur adipi scing elit.
+              Porttitor sed tellus massa adipiscing egestas placerat.{" "}
+            </p>
+          </div>
+          <div className="">
+            <h4 className="font-semibold text-base mb-5">Company</h4>
+            <ul className="flex flex-col gap-2">
+              <li className="">About Us</li>
+              <li>Newsletter</li>
+            </ul>
+          </div>
+          <div className="">
+            <h4 className="font-semibold text-base mb-5">Community</h4>
+            <ul className="flex flex-col gap-2">
+              <li className="">Twitter</li>
+              <li>LinkedIn</li>
+              <li>Telegram</li>
+              <li>Instagram</li>
+            </ul>
+          </div>
+          <div className="">
+            <h4 className="font-semibold text-base mb-5">Help</h4>
+            <ul className="flex flex-col gap-2">
+              <li className="">Help Center</li>
+              <li>FAQs</li>
+            </ul>
+          </div>
+          <div className="">
+            <h4 className="font-semibold text-base mb-5">Contact Us</h4>
+            <ul className="flex flex-col gap-2">
+              <li className="">Mail</li>
+              <li>Phone</li>
+            </ul>
+          </div>
+        </div>
+        <p className="mt-16 text-center text-sm text-white/80">
+          © 2023 SecrecyPay
+        </p>
       </footer>
     </div>
   );
