@@ -28,6 +28,7 @@ import plus from "./assets/images/plus.png";
 import { useState } from "react";
 
 export default function Home() {
+  const [user, setUser] = useState({ email: "", fullname: "" });
   const [activeCategory, setActiveCategory] = useState(1);
   const [activeFaq, setActiveFaq] = useState(0);
   const features = [
@@ -124,6 +125,21 @@ export default function Home() {
     },
   ];
 
+  const endpoint = "http://localhost:3000/api/subscription";
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+    await fetch(endpoint, {
+      method: "POST",
+      body: {...user},
+      headers: {
+        "Content-Type": "Appliction/json",
+      },
+    })
+      .then((res) => res.json((data) => console.log(data)))
+      .catch((e) => console.log(e.message));
+    console.log(user);
+  };
   return (
     <div className="relative min-h-screen">
       <div className="bg-black text-white pb-14">
@@ -297,7 +313,10 @@ export default function Home() {
             sed tellus <br /> adipiscing egestas placerat. Condimentum tempor
             lorem eu mi pretium nunc.
           </p>
-          <div className="mt-7 text-white bg-black rounded-lg p-5 md:p-10 md:px-24">
+          <form
+            onSubmit={submitForm}
+            className="mt-7 text-white bg-black rounded-lg p-5 md:p-10 md:px-24"
+          >
             <h3 className="text-3xl text-center font-semibold tracking-wider leading-9">
               Our Membership <br />
               is almost here
@@ -308,19 +327,32 @@ export default function Home() {
               first members.
             </p>
             <input
+              required
+              value={user.fullname}
+              onChange={(e) =>
+                setUser((prev) => ({ ...prev, fullname: e.target.value }))
+              }
               type="text"
               placeholder="Fullname"
               className="outline-none w-full text-sm bg-[#D9D9D940] p-3 rounded-md"
             />
             <input
-              type="text"
+              type="email"
+              required
               placeholder="Email address"
               className="my-3 outline-none w-full text-sm bg-[#D9D9D940] p-3 rounded-md"
+              value={user.email}
+              onChange={(e) =>
+                setUser((prev) => ({ ...prev, email: e.target.value }))
+              }
             />
-            <button className="w-full text-sm text-white bg-primary font-medium px-7 py-3.5 rounded-md">
+            <button
+              type="submit"
+              className="w-full text-sm text-white bg-primary font-medium px-7 py-3.5 rounded-md"
+            >
               Join the waitlist
             </button>
-          </div>
+          </form>
           <div className="mt-8 grid grid-cols-3 gap-5">
             {features
               .filter((_, idx) => idx < 3)

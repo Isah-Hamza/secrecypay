@@ -63,3 +63,7 @@ export async function GET(request) {
     status: 400,
   });
 }
+
+export async function POST() {
+  return Response.json({message: "Hello, Post requset" });
+}
