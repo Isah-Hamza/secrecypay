@@ -154,7 +154,7 @@ export default function Home() {
               className="absolute top-[-70px] right-0"
             />
             <div className="relative z-20 hero min-h-[550px] w-full sm:w-[97%] m-auto flex items-center">
-              <div className="flex flex-col gap-5">
+              <div className="w-full flex flex-col gap-5">
                 <div className="flex gap-2 items-center text-primary text-xs font-medium">
                   <p>SAFE //</p>
                   <p>SECURE //</p>
@@ -166,8 +166,8 @@ export default function Home() {
                     fast <span className="font-normal">& </span> secure.
                   </p>
                 </div>
-                <div className="flex gap-3 sm:gap-10 items-center">
-                  <button className="req-to-join-btn font-semibold px-3 sm:px-7 py-3.5 rounded-3xl text-black flex items-center gap-3">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 sm:gap-10">
+                  <button className="req-to-join-btn font-semibold px-3 sm:px-7 py-3.5 rounded-3xl text-black flex items-center justify-center gap-3">
                     <span>Request to join</span>
                     <Image
                       src={black_arrow}
@@ -176,7 +176,7 @@ export default function Home() {
                       height={6}
                     />
                   </button>
-                  <button className="text-sm text-white border border-white font-semibold px-3 sm:px-7 py-3.5 rounded-3xl flex items-center gap-3">
+                  <button className="text-sm text-white border border-white font-semibold px-3 sm:px-7 py-3.5 rounded-3xl flex items-center justify-center gap-3">
                     <span>LEARN MORE</span>
                     <Image
                       src={white_arrow}
