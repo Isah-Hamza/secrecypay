@@ -1,5 +1,5 @@
 "use client";
-
+import { ImSpinner2 } from "react-icons/im";
 import Image from "next/image";
 import logo from "@/app/assets/images/logo.png";
 import black_arrow from "@/app/assets/images/arrow-right-black.png";
@@ -26,11 +26,13 @@ import country6 from "./assets/images/country6.png";
 import plus from "./assets/images/plus.png";
 
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function Home() {
   const [user, setUser] = useState({ email: "", fullname: "" });
   const [activeCategory, setActiveCategory] = useState(1);
   const [activeFaq, setActiveFaq] = useState(0);
+  const [loading, setLoading] = useState(false);
   const features = [
     {
       title: "Feature",
@@ -128,18 +130,38 @@ export default function Home() {
   const endpoint = "http://localhost:3000/api/subscription";
 
   const submitForm = async (e) => {
+    setLoading(true);
     e.preventDefault();
     await fetch(endpoint, {
       method: "POST",
-      body: {...user},
+      body: JSON.stringify(user),
       headers: {
         "Content-Type": "Appliction/json",
       },
     })
-      .then((res) => res.json((data) => console.log(data)))
-      .catch((e) => console.log(e.message));
-    console.log(user);
+      .then((res) => {
+        console.log('hi, then');
+        if (res.ok) successNotification(res.statusText);
+      })
+      .catch((e) => {
+        console.log('object');
+        errorNotification();
+      })
+      .finally(() => setLoading(false));
   };
+
+  const successNotification = (msg) =>
+    toast.success(msg ?? "Successfully subscribed. Thank you!", {
+      theme: "colored",
+      hideProgressBar: true,
+    });
+
+  const errorNotification = (msg) =>
+    toast.error(msg ?? "An error occured. Try again!", {
+      theme: "colored",
+      hideProgressBar: true,
+    });
+
   return (
     <div className="relative min-h-screen">
       <div className="bg-black text-white pb-14">
@@ -327,7 +349,6 @@ export default function Home() {
               first members.
             </p>
             <input
-              required
               value={user.fullname}
               onChange={(e) =>
                 setUser((prev) => ({ ...prev, fullname: e.target.value }))
@@ -347,9 +368,13 @@ export default function Home() {
               }
             />
             <button
+              disabled={loading}
               type="submit"
-              className="w-full text-sm text-white bg-primary font-medium px-7 py-3.5 rounded-md"
+              className="flex items-center justify-center gap-3 disabled:opacity-75 w-full text-sm text-white bg-primary font-medium px-7 py-3.5 rounded-md"
             >
+              {loading ? (
+                <ImSpinner2 className="animate-spin" size={20} />
+              ) : null}
               Join the waitlist
             </button>
           </form>

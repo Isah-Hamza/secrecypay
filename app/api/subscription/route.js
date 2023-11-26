@@ -38,32 +38,51 @@ export async function GET(request) {
     // });
   });
 
-  //         // Insert the new subscription into the 'subscriptions' table
-  //         const insertQuery = 'INSERT INTO subscriptions (email) VALUES (?)';
-  //         connection.query(insertQuery, [email], (error, results) => {
-  //           if (error) throw error;
-
-  //           // Close the MySQL connection
-  //           connection.end();
-
-  //           // Return a success response
-  //           return res.status(200).json({ success: true, message: 'Subscription successful' });
-  //         });
-  //       });
-  //     } catch (error) {
-  //       console.error('Error saving subscription:', error);
-  //       return res.status(500).json({ success: false, message: 'Internal Server Error' });
-  //     }
-  //   }
-
-  //   // Return a method not allowed response for non-POST requests
-  // }
-
   return new Response("An Error Occured Error, Next.js!", {
     status: 400,
   });
 }
 
-export async function POST() {
-  return Response.json({message: "Hello, Post requset" });
+export async function POST(request) {
+  const body = await request.json();
+  const { email, fullname } = body;
+
+  if (!email || !fullname) {
+    return new Response("Missing Required Arguements", {
+      status: 200,
+      statusText: "Missing Required Arguements",
+    });
+  }
+
+  const connection = mysql.createConnection({
+    host: "localhost:80",
+    user: "root",
+    password: "",
+    database: "waitlist",
+  });
+
+  connection.connect();
+  //   // Create a 'subscriptions' table if it doesn't exist
+  const createTableQuery = `
+    CREATE TABLE IF NOT EXISTS subscriptions (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      fullname VARCHAR(255) NOT NULL,
+      email VARCHAR(255) NOT NULL UNIQUE
+    )
+    `;
+  const insertQuery = "INSERT INTO subscriptions (email,fullname) VALUES (?,?)";
+
+  connection.query(createTableQuery, (error, result) => {
+    if (error) {
+      console.log("error have occured again");
+      return;
+    } else {
+      return new Response("Method Not Allowed");
+    }
+  });
+
+  return new Response("User successfylly subscribed to waitlist", {
+    status: 201,
+    statusText: "Successfully added to waitlist",
+  });
 }
