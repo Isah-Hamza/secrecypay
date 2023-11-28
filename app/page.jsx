@@ -27,6 +27,7 @@ import plus from "./assets/images/plus.png";
 
 import { useState } from "react";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 export default function Home() {
   const [user, setUser] = useState({ email: "", fullname: "" });
@@ -127,28 +128,37 @@ export default function Home() {
     },
   ];
 
-  const endpoint = "http://localhost:3000/api/subscription";
+  const endpoint = "http://localhost/secrecy-backend/server.php";
 
   const submitForm = async (e) => {
     setLoading(true);
     e.preventDefault();
-    await fetch(endpoint, {
-      method: "POST",
-      body: JSON.stringify(user),
-      headers: {
-        "Content-Type": "Appliction/json",
-      },
-    })
+    await axios
+      .post(endpoint, user, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Accept: "*/*",
+        },
+      })
       .then((res) => {
-        console.log('hi, then');
-        if (res.ok) successNotification(res.statusText);
+        successNotification(res.data.message);
       })
       .catch((e) => {
-        console.log('object');
-        errorNotification();
+        console.log(e.response.data.error);
+        errorNotification(e.response.data.error);
       })
       .finally(() => setLoading(false));
   };
+
+  // async function submitForm(e) {
+  //   e.preventDefault();
+  //   const res = await axios.post(endpoint, user, {
+  //     headers: {
+  //       "Content-Type": "multipart/form-data",
+  //       Accept: "*/*",
+  //     },
+  //   });
+  // }
 
   const successNotification = (msg) =>
     toast.success(msg ?? "Successfully subscribed. Thank you!", {
@@ -354,10 +364,12 @@ export default function Home() {
                 setUser((prev) => ({ ...prev, fullname: e.target.value }))
               }
               type="text"
+              name="fullname"
               placeholder="Fullname"
               className="outline-none w-full text-sm bg-[#D9D9D940] p-3 rounded-md"
             />
             <input
+              name="email"
               type="email"
               required
               placeholder="Email address"
