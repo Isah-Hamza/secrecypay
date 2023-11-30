@@ -33,37 +33,36 @@ export default function Home() {
   const [user, setUser] = useState({ email: "", fullname: "" });
   const [activeCategory, setActiveCategory] = useState(1);
   const [activeFaq, setActiveFaq] = useState(0);
-  const [activeFaqCategory, setActiveFaqCategory] = useState(1);
   const [loading, setLoading] = useState(false);
   const features = [
     {
-      title: "Feature",
+      title: "Experience Zero Fee Swap",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+        "Maximize your trades by instantly exchanging coins without any fees.",
       img: feature1,
     },
     {
-      title: "Feature",
+      title: "Secure and Reliable P2P",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+        "Safely deposit funds from your bank account and securely withdraw money using personalized P2P service.",
       img: feature2,
     },
     {
-      title: "Feature",
+      title: "Easily Send and Receive Funds Using Usernames",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+        "Connect with friends, family, and loved ones, sending money using their usernames.",
       img: feature3,
     },
     {
-      title: "Feature",
+      title: "Simplified Payments Using Virtual Cards",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+        "Effortlessly manage payments with Obiex's virtual credit and debit cards. Generate a virtual card to conveniently cover all your expenses.",
       img: feature4,
     },
     {
-      title: "Feature",
+      title: "Get paid while keeping your crypto safe!",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+        "Securely store your cryptocurrency and earn up to 10% interest on what you save.",
       img: feature5,
     },
   ];
@@ -98,25 +97,21 @@ export default function Home() {
     country6,
   ];
 
-  const categories = [
-    "General",
-    "Transactions",
-    "Payment",
-    "Returns",
-    "Careers",
-  ];
-
   const faqs = [
     {
       title: "General",
       faqs: [
         {
-          q: "General What is Secrecy Pay and how do I use it?",
-          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+          q: "What's Secrecy Pay all about?",
+          a: "Secrecy Pay is all about making transactions super safe, speedy, and reliable. We're all about keeping your money moves secure and smooth with some top notch encryption.",
         },
         {
-          q: "What is Secrecy Pay and how do I use it?",
-          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+          q: "How can I sign up to get on board with Secrecy Pay?",
+          a: "Easy peasy! Just join the waitlist. Pop in your details, and we'll give you the heads-up as soon as the website's up and running.",
+        },
+        {
+          q: "Can I use Secrecy Pay from anywhere in the world?",
+          a: "We're aiming to go global eventually, but when we kick off, we might start in specific places. Stay tuned for updates on where we're launching first!",
         },
       ],
     },
@@ -124,12 +119,18 @@ export default function Home() {
       title: "Transactions",
       faqs: [
         {
-          q: "Tranx What is Secrecy Pay and how do I use it?",
-          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+          q: "Is Secrecy Pay really secure for transactions?",
+          a: "You bet! We've got security measures like fancy encryption and extra verification steps to make sure your transactions are as safe as can be.",
         },
+
         {
-          q: "What is Secrecy Pay and how do I use it?",
-          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+          q: "What can I do on Secrecy Pay?",
+          a: "Loads of stuff! You can sling money to friends, buy stuff online, pay bills, anything to do with money, we've got your back.",
+        },
+
+        {
+          q: "Are there limits on how much I can do in one go?",
+          a: "Yup, for safety reasons, we might set some limits at first. But as you get comfy and build trust with us, we might tweak those limits for you.",
         },
       ],
     },
@@ -137,12 +138,16 @@ export default function Home() {
       title: "Payment",
       faqs: [
         {
-          q: "Payment What is Secrecy Pay and how do I use it?",
-          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+          q: "How quick are payments on Secrecy Pay?",
+          a: "Lightning fast! Most times. We hustle to make sure your money moves at cheetah speed.",
         },
         {
-          q: "What is Secrecy Pay and how do I use it?",
-          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+          q: "Can I cancel payments once I've hit send?",
+          a: "Once you hit send, it's like launching a rocket! So, cancelling might not be an option. Check twice before hitting that send button!",
+        },
+        {
+          q: "What currencies can I use on Secrecy Pay?",
+          a: "We're aiming to cover lots of different currencies to suit everyone. At the start, we might have a few, but we're working on adding more.",
         },
       ],
     },
@@ -150,12 +155,16 @@ export default function Home() {
       title: "Returns",
       faqs: [
         {
-          q: "Returns What is Secrecy Pay and how do I use it?",
-          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+          q: "Can I get refunds through Secrecy Pay?",
+          a: "While we make sure your transactions are safe, refunds and returns depend on the folks you're buying from. You'll need to talk to them directly about that.",
         },
         {
-          q: "What is Secrecy Pay and how do I use it?",
-          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+          q: "Do I get charged fees for returns through Secrecy Pay?",
+          a: "Nope, we won't slap you with fees. But remember, the sellers might have their own policies, so check what they say about returns.",
+        },
+        {
+          q: "How long does it take to process a return on Secrecy Pay?",
+          a: "That's in the hands of the sellers, my friend. We make sure your transactions are secure, but how fast they do returns—it's up to them.",
         },
       ],
     },
@@ -163,12 +172,16 @@ export default function Home() {
       title: "Careers",
       faqs: [
         {
-          q: "Careers What is Secrecy Pay and how do I use it?",
-          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+          q: "Got any jobs going at Secrecy Pay?",
+          a: "Heck yeah, we're always on the lookout for talented folks to join our crew! Check our website for job openings and send in your application.",
         },
         {
-          q: "What is Secrecy Pay and how do I use it?",
-          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+          q: "What kind of roles are usually up for grabs at Secrecy Pay?",
+          a: "We've got a bunch, making cool stuff, spreading the word, helping customer, loads of exciting stuff. Dive into our careers page for more deets.",
+        },
+        {
+          q: "Does Secrecy Pay do internships or programs for new grads?",
+          a: "Absolutely! We're big fans of fresh talent. Keep an eye on our careers page for updates about internships and cool programs to kickstart your career with us.",
         },
       ],
     },
@@ -277,11 +290,28 @@ export default function Home() {
                 <h4 className="font-semibold leading-10 mb-3 text-4xl">
                   Fantastic <br /> features
                 </h4>
-                <p className="text-slate-400 text-[15px]">
-                  Lorem ipsum dolor sit amet, conse ctetur adipi scing elit.
-                  Porttitor sed tellus massa adipiscing egestas placerat.
-                  Condimentum tempor lorem eu mi pretium nunc.
-                </p>
+                <div className="text-slate-400 text-xs">
+                  <ul className="list-disc disc-inside">
+                    <li> Explore the World of Confidential Transactions</li>
+                    <li>Engage in discreet cryptocurrency transactions </li>
+                    <li>
+                      Acquire and vend crypto at optimal rates without any
+                      transaction fees.
+                    </li>
+                    <li>
+                      Utilize dollar cards for seamless shopping and
+                      confidential payments worldwide.
+                    </li>
+                    <li>
+                      Swiftly exchange crypto without the need to wait for
+                      blockchain confirmations.
+                    </li>
+                    <li>
+                      Safely store your digital assets and earn up to 10%
+                      interest on your cryptocurrency holdings.
+                    </li>
+                  </ul>
+                </div>
               </div>
               {features.map((item, idx) => (
                 <div
@@ -535,9 +565,8 @@ export default function Home() {
               </p>
             </div>
             <p className="text-sm max-w-sm mt-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor
-              sed tellus massa adipiscing egestas placerat. Condimentum tempor
-              lorem eu mi pretium nunc.
+              Buy and sell crypto in a flash with Secrecy Pay. Fast, secure
+              transactions made easy
             </p>
           </div>
           <div className="flex gap-10 items-center">
@@ -555,8 +584,8 @@ export default function Home() {
               <span>SECRECY PAY</span>
             </div>
             <p className="max-w-xs text-sm mt-2 ">
-              Lorem ipsum dolor sit amet, conse ctetur adipi scing elit.
-              Porttitor sed tellus massa adipiscing egestas placerat.{" "}
+              Buy and sell crypto in a flash with Secrecy Pay. Fast, secure
+              transactions made easy
             </p>
           </div>
           <div className="">
@@ -569,10 +598,28 @@ export default function Home() {
           <div className="">
             <h4 className="font-semibold text-base mb-5">Community</h4>
             <ul className="flex flex-col gap-2">
-              <li className="">Twitter</li>
-              <li>LinkedIn</li>
-              <li>Telegram</li>
-              <li>Instagram</li>
+              <li className="hover:text-primary">
+                {" "}
+                <a target="_blank" href="https://x.com/secrecypay?s=21&t=1cONdDNrW1DXiKkRQxYzgw">
+                  Twitter
+                </a>{" "}
+              </li>
+              <li className="hover:text-primary">
+                {" "}
+                <a target="_blank" href="https://www.linkedin.com/company/secrecy-pay/">
+                  LinkedIn
+                </a>{" "}
+              </li>
+              <li className="hover:text-primary">
+                {" "}
+                <a target="_blank" href="https://t.me/+1LQb4qZwsxIzYTM0">Telegram</a>{" "}
+              </li>
+              <li className="hover:text-primary">
+                {" "}
+                <a target="_blank" href="https://instagram.com/secrecypayhq?igshid=MzMyNGUyNmU2YQ%3D%3D&utm_source=qr">
+                  Instagram
+                </a>{" "}
+              </li>
             </ul>
           </div>
           <div className="">
