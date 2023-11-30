@@ -68,21 +68,21 @@ export default function Home() {
   ];
   const resources = [
     {
-      title: "Title",
+      title: "Safe, Swift, Reliable: Secrecy Pay - Coming Soon!",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+        "Get ready for the ultimate online money experience! Secrecy Pay is gearing up to revolutionize your transactions. Stay tuned for secure, lightning-fast, and reliable financial interactions.",
       img: feature1,
     },
     {
-      title: "Feature",
+      title: "SecrecyPay: Where Safety Meets Speed",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+        "Your wait for secure and swift transactions is almost over! SecrecyPay brings you the perfect blend of security and speed. Join us soon for a seamless money moving adventure.",
       img: feature2,
     },
     {
-      title: "Feature",
+      title: "Coming Soon: SecrecyPay - Your Trusted Money Companion",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id morbi accumsan cras laoreet.",
+        "Brace yourself for the arrival of SecrecyPay! Your trusted companion for secure, reliable, and hassle-free transactions. Prepare to experience money matters like never before!",
       img: feature3,
     },
   ];
@@ -456,7 +456,7 @@ export default function Home() {
               Join the waitlist
             </button>
           </form>
-          <div className="mt-8 grid grid-cols-3 gap-5">
+          <div className="mt-8 grid sm:grid-cols-3 gap-5">
             {features
               .filter((_, idx) => idx < 3)
               .map((item, idx) => (
@@ -531,7 +531,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="resources mt-20">
+        <div className="resources mt-32">
           <h3 className="text-[26px] font-semibold ">Resources</h3>
           <p className="text-slate-400 text-sm mb-10">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -556,7 +556,7 @@ export default function Home() {
         </div>
       </div>
       <div className="bg-primary mt-48">
-        <div className="max-w-[1200px] m-auto px-5 py-20 flex gap-10 flex-col md:flex-row justify-between md:items-center">
+        <div className="max-w-[1200px] m-auto px-5 py-20 pb-28 flex gap-10 flex-col md:flex-row justify-between md:items-center">
           <div className="">
             <div className="text-4xl md:text-5xl my-3">
               <p>Buy & sell crypto</p>
@@ -590,50 +590,65 @@ export default function Home() {
           </div>
           <div className="">
             <h4 className="font-semibold text-base mb-5">Company</h4>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-4">
               <li className="">About Us</li>
               <li>Newsletter</li>
             </ul>
           </div>
           <div className="">
             <h4 className="font-semibold text-base mb-5">Community</h4>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-4">
               <li className="hover:text-primary">
                 {" "}
-                <a target="_blank" href="https://x.com/secrecypay?s=21&t=1cONdDNrW1DXiKkRQxYzgw">
+                <a
+                  target="_blank"
+                  href="https://x.com/secrecypay?s=21&t=1cONdDNrW1DXiKkRQxYzgw"
+                >
                   Twitter
                 </a>{" "}
               </li>
               <li className="hover:text-primary">
                 {" "}
-                <a target="_blank" href="https://www.linkedin.com/company/secrecy-pay/">
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/company/secrecy-pay/"
+                >
                   LinkedIn
                 </a>{" "}
               </li>
               <li className="hover:text-primary">
                 {" "}
-                <a target="_blank" href="https://t.me/+1LQb4qZwsxIzYTM0">Telegram</a>{" "}
+                <a target="_blank" href="https://t.me/+1LQb4qZwsxIzYTM0">
+                  Telegram
+                </a>{" "}
               </li>
               <li className="hover:text-primary">
                 {" "}
-                <a target="_blank" href="https://instagram.com/secrecypayhq?igshid=MzMyNGUyNmU2YQ%3D%3D&utm_source=qr">
+                <a
+                  target="_blank"
+                  href="https://instagram.com/secrecypayhq?igshid=MzMyNGUyNmU2YQ%3D%3D&utm_source=qr"
+                >
                   Instagram
                 </a>{" "}
               </li>
             </ul>
           </div>
           <div className="">
-            <h4 className="font-semibold text-base mb-5">Help</h4>
-            <ul className="flex flex-col gap-2">
+            <h4 className="font-semibold text-base mb-7">Help</h4>
+            <ul className="flex flex-col gap-4">
               <li className="">Help Center</li>
               <li>FAQs</li>
             </ul>
           </div>
           <div className="">
-            <h4 className="font-semibold text-base mb-5">Contact Us</h4>
-            <ul className="flex flex-col gap-2">
-              <li className="">Mail</li>
-              <li>Phone</li>
+            <h4 className="font-semibold text-base mb-7">Contact Us</h4>
+            <ul className="flex flex-col gap-4">
+              <li className="hover:text-primary">
+                <a href="mailto:info@secrecypay.com">Mail</a>
+              </li>
+              <li className="hover:text-primary">
+                <a href="tel:+1234567890">Phone</a>
+              </li>
             </ul>
           </div>
         </div>
