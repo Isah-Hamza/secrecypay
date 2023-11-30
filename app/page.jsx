@@ -33,6 +33,7 @@ export default function Home() {
   const [user, setUser] = useState({ email: "", fullname: "" });
   const [activeCategory, setActiveCategory] = useState(1);
   const [activeFaq, setActiveFaq] = useState(0);
+  const [activeFaqCategory, setActiveFaqCategory] = useState(1);
   const [loading, setLoading] = useState(false);
   const features = [
     {
@@ -107,24 +108,69 @@ export default function Home() {
 
   const faqs = [
     {
-      q: "What is Secrecy Pay and how do I use it?",
-      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+      title: "General",
+      faqs: [
+        {
+          q: "General What is Secrecy Pay and how do I use it?",
+          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+        },
+        {
+          q: "What is Secrecy Pay and how do I use it?",
+          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+        },
+      ],
     },
     {
-      q: "What is Secrecy Pay and how do I use it?",
-      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+      title: "Transactions",
+      faqs: [
+        {
+          q: "Tranx What is Secrecy Pay and how do I use it?",
+          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+        },
+        {
+          q: "What is Secrecy Pay and how do I use it?",
+          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+        },
+      ],
     },
     {
-      q: "What is Secrecy Pay and how do I use it?",
-      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+      title: "Payment",
+      faqs: [
+        {
+          q: "Payment What is Secrecy Pay and how do I use it?",
+          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+        },
+        {
+          q: "What is Secrecy Pay and how do I use it?",
+          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+        },
+      ],
     },
     {
-      q: "What is Secrecy Pay and how do I use it?",
-      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+      title: "Returns",
+      faqs: [
+        {
+          q: "Returns What is Secrecy Pay and how do I use it?",
+          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+        },
+        {
+          q: "What is Secrecy Pay and how do I use it?",
+          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+        },
+      ],
     },
     {
-      q: "What is Secrecy Pay and how do I use it?",
-      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+      title: "Careers",
+      faqs: [
+        {
+          q: "Careers What is Secrecy Pay and how do I use it?",
+          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+        },
+        {
+          q: "What is Secrecy Pay and how do I use it?",
+          a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas at elementum pretium. Non habitant morbi arcu eu et. Velit gravida egestas massa, volutpat mi egestas mauris nulla ac. Posuere in mauris feugiat sed porta nisi, ut massa. Leo ut massa in commodo, in egestas in ultrices.",
+        },
+      ],
     },
   ];
 
@@ -149,16 +195,6 @@ export default function Home() {
       })
       .finally(() => setLoading(false));
   };
-
-  // async function submitForm(e) {
-  //   e.preventDefault();
-  //   const res = await axios.post(endpoint, user, {
-  //     headers: {
-  //       "Content-Type": "multipart/form-data",
-  //       Accept: "*/*",
-  //     },
-  //   });
-  // }
 
   const successNotification = (msg) =>
     toast.success(msg ?? "Successfully subscribed. Thank you!", {
@@ -422,7 +458,7 @@ export default function Home() {
           </p>
           <div className="mt-10 flex flex-col md:flex-row md:items-start gap-20 max-w-5xl m-auto">
             <div className="overflow-x-auto md:w-[400px] flex md:grid gap-5">
-              {categories.map((item, idx) => (
+              {faqs.map((item, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveCategory(idx)}
@@ -430,12 +466,12 @@ export default function Home() {
                     activeCategory == idx && "bg-[#191919] text-white"
                   }`}
                 >
-                  {item}
+                  {item.title}
                 </button>
               ))}
             </div>
             <div>
-              {faqs.map((item, idx) => (
+              {faqs[activeCategory].faqs.map((item, idx) => (
                 <div
                   onClick={() => setActiveFaq(idx)}
                   key={idx}
