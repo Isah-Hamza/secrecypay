@@ -187,7 +187,8 @@ export default function Home() {
     },
   ];
 
-  const endpoint = "http://localhost/secrecy-backend/server.php";
+  // const endpoint = "http://localhost/secrecy-backend/server.php";
+  const endpoint = "https://secrecypay.com/server/server.php";
 
   const submitForm = async (e) => {
     setLoading(true);
