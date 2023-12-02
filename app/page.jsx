@@ -6,11 +6,11 @@ import black_arrow from "@/app/assets/images/arrow-right-black.png";
 import white_arrow from "@/app/assets/images/arrow-right-white.png";
 import right_ellipse from "@/app/assets/images/right-ellipse.png";
 import left_ellipse from "@/app/assets/images/left-ellipse.png";
-import feature1 from "./assets/images/feature1.png";
-import feature2 from "./assets/images/feature2.png";
-import feature3 from "./assets/images/feature3.png";
-import feature4 from "./assets/images/feature4.png";
-import feature5 from "./assets/images/feature5.png";
+import feature1 from "./assets/images/swap.png"
+import feature2 from "./assets/images/secure.png";
+import feature3 from "./assets/images/send_funds.png";
+import feature4 from "./assets/images/simplified_payment.png";
+import feature5 from "./assets/images/get_paid.png";
 
 import logo1 from "./assets/images/logo1.png";
 import logo2 from "./assets/images/logo2.png";
@@ -323,8 +323,8 @@ export default function Home() {
                 >
                   <Image
                     src={item.img}
-                    width={50}
-                    height={50}
+                    width={60}
+                    height={60}
                     alt={item.title}
                   />
                   <p className="my-3">{item.title}</p>
