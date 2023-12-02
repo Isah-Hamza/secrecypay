@@ -12,6 +12,10 @@ import feature3 from "./assets/images/send_funds.png";
 import feature4 from "./assets/images/simplified_payment.png";
 import feature5 from "./assets/images/get_paid.png";
 
+import resource1 from './assets/images/swift.png';
+import resource2 from './assets/images/speed.png';
+import resource3 from './assets/images/trusted.png';
+
 import logo1 from "./assets/images/logo1.png";
 import logo2 from "./assets/images/logo2.png";
 import logo3 from "./assets/images/logo3.png";
@@ -71,19 +75,19 @@ export default function Home() {
       title: "Safe, Swift, Reliable: Secrecy Pay - Coming Soon!",
       content:
         "Get ready for the ultimate online money experience! Secrecy Pay is gearing up to revolutionize your transactions. Stay tuned for secure, lightning-fast, and reliable financial interactions.",
-      img: feature1,
+      img: resource1,
     },
     {
       title: "SecrecyPay: Where Safety Meets Speed",
       content:
         "Your wait for secure and swift transactions is almost over! SecrecyPay brings you the perfect blend of security and speed. Join us soon for a seamless money moving adventure.",
-      img: feature2,
+      img: resource2,
     },
     {
       title: "Coming Soon: SecrecyPay - Your Trusted Money Companion",
       content:
         "Brace yourself for the arrival of SecrecyPay! Your trusted companion for secure, reliable, and hassle-free transactions. Prepare to experience money matters like never before!",
-      img: feature3,
+      img: resource3,
     },
   ];
   const logos = [logo1, logo2, logo3, logo4];
@@ -289,7 +293,7 @@ export default function Home() {
             <div className="hidden relative z-20 features md:grid grid-cols-3 gap-5">
               <div className="px-2">
                 <h4 className="font-semibold leading-10 mb-3 text-4xl">
-                  Fantastic <br /> features
+                  Amazing <br /> features
                 </h4>
                 <div className="text-slate-400 text-xs">
                   <ul className="list-disc disc-inside">
@@ -545,7 +549,7 @@ export default function Home() {
                 } resource transition-all duration-300 ease-linear cursor-pointer p-5 px-10 rounded`}
                 key={idx}
               >
-                <Image src={item.img} width={50} height={50} alt={item.title} />
+                <Image src={item.img} width={60} height={60} alt={item.title} />
                 <p className="my-3">{item.title}</p>
                 <p className="text-sm mb-3 text-slate-400">{item.content}</p>
                 <button className="text-primary underline text-sm">
