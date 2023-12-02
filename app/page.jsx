@@ -243,7 +243,6 @@ export default function Home() {
           <button
             onClick={scrollToForm}
             href={"#waitlist-form"}
-            scroll
             className="text-black join-btn font-semibold px-7 py-2.5 rounded-3xl text-sm"
           >
             {" "}
