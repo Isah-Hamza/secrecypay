@@ -6,15 +6,15 @@ import black_arrow from "@/app/assets/images/arrow-right-black.png";
 import white_arrow from "@/app/assets/images/arrow-right-white.png";
 import right_ellipse from "@/app/assets/images/right-ellipse.png";
 import left_ellipse from "@/app/assets/images/left-ellipse.png";
-import feature1 from "./assets/images/swap.png"
+import feature1 from "./assets/images/swap.png";
 import feature2 from "./assets/images/secure.png";
 import feature3 from "./assets/images/send_funds.png";
 import feature4 from "./assets/images/simplified_payment.png";
 import feature5 from "./assets/images/get_paid.png";
 
-import resource1 from './assets/images/swift.png';
-import resource2 from './assets/images/speed.png';
-import resource3 from './assets/images/trusted.png';
+import resource1 from "./assets/images/swift.png";
+import resource2 from "./assets/images/speed.png";
+import resource3 from "./assets/images/trusted.png";
 
 import logo1 from "./assets/images/logo1.png";
 import logo2 from "./assets/images/logo2.png";
@@ -29,11 +29,13 @@ import country5 from "./assets/images/country5.png";
 import country6 from "./assets/images/country6.png";
 import plus from "./assets/images/plus.png";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
+import Link from "next/link";
 
 export default function Home() {
+  const form = useRef();
   const [user, setUser] = useState({ email: "", fullname: "" });
   const [activeCategory, setActiveCategory] = useState(1);
   const [activeFaq, setActiveFaq] = useState(0);
@@ -226,6 +228,10 @@ export default function Home() {
       hideProgressBar: true,
     });
 
+  const scrollToForm = () => {
+    form.current.scrollIntoView();
+  };
+
   return (
     <div className="relative min-h-screen">
       <div className="bg-black text-white pb-14">
@@ -234,7 +240,12 @@ export default function Home() {
             <Image src={logo} alt="logo" width={20} height={30} />
             <span>SECRECY PAY</span>
           </div>
-          <button className="text-black join-btn font-semibold px-7 py-2.5 rounded-3xl text-sm">
+          <button
+            onClick={scrollToForm}
+            href={"#waitlist-form"}
+            scroll
+            className="text-black join-btn font-semibold px-7 py-2.5 rounded-3xl text-sm"
+          >
             {" "}
             JOIN
           </button>
@@ -269,7 +280,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 sm:gap-10">
-                  <button className="req-to-join-btn font-semibold px-3 sm:px-7 py-3.5 rounded-3xl text-black flex items-center justify-center gap-3">
+                  <button onClick={scrollToForm} className="req-to-join-btn font-semibold px-3 sm:px-7 py-3.5 rounded-3xl text-black flex items-center justify-center gap-3">
                     <span>Request to join</span>
                     <Image
                       src={black_arrow}
@@ -406,7 +417,11 @@ export default function Home() {
           </div>
         </main>
       </div>
-      <div className="bg-[#ebeff5] min-h-[200px] px-5 md:px-0 py-14">
+      <div
+        ref={form}
+        id="waitlist-form"
+        className="bg-[#ebeff5] min-h-[200px] px-5 md:px-0 py-14"
+      >
         <div className="max-w-[700px] m-auto">
           <h3 className="text-2xl text-center font-semibold">
             Fantastic features
@@ -575,7 +590,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex gap-10 items-center">
-            <button className="req-to-join-btn-black text-center font-semibold px-7 py-2.5 rounded-2xl text-white bg-black flex items-center gap-3">
+            <button onClick={scrollToForm} className="req-to-join-btn-black text-center font-semibold px-7 py-2.5 rounded-2xl text-white bg-black flex items-center gap-3">
               <span>Request to join</span>
             </button>
           </div>
