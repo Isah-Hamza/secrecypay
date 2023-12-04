@@ -280,7 +280,7 @@ export default function Home() {
                       height={6}
                     />
                   </button>
-                  <button className="text-sm text-white border border-white font-semibold px-3 sm:px-7 py-3.5 rounded-3xl flex items-center justify-center gap-3">
+                  <button onClick={scrollToForm} className="text-sm text-white border border-white font-semibold px-3 sm:px-7 py-3.5 rounded-3xl flex items-center justify-center gap-3">
                     <span>LEARN MORE</span>
                     <Image
                       src={white_arrow}
@@ -335,7 +335,7 @@ export default function Home() {
                   />
                   <p className="my-3">{item.title}</p>
                   <p className="text-sm mb-3 text-slate-400">{item.content}</p>
-                  <button className="text-primary underline text-sm">
+                  <button onClick={scrollToForm} className="text-primary underline text-sm">
                     Learn more
                   </button>
                 </div>
@@ -459,8 +459,7 @@ export default function Home() {
         <div className="faqs ">
           <h3 className="text-3xl font-semibold ">Have a Question?</h3>
           <p className="text-slate-400 text-sm mb-10">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
+          Get instant clarity and expert guidance.          </p>
           <div className="mt-10 flex flex-col md:flex-row md:items-start gap-20 max-w-5xl m-auto">
             <div className="overflow-x-auto md:w-[400px] flex md:grid gap-5">
               {faqs.map((item, idx) => (
@@ -509,8 +508,7 @@ export default function Home() {
         <div className="resources mt-32">
           <h3 className="text-[26px] font-semibold ">Resources</h3>
           <p className="text-slate-400 text-sm mb-10">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
+          Discover the hidden strategies and expert insights.          </p>
           <div className="relative z-20 resources grid grid-cols-1 md:grid-cols-3 gap-5">
             {resources.map((item, idx) => (
               <div
@@ -522,7 +520,7 @@ export default function Home() {
                 <Image src={item.img} width={60} height={60} alt={item.title} />
                 <p className="my-3">{item.title}</p>
                 <p className="text-sm mb-3 text-slate-400">{item.content}</p>
-                <button className="text-primary underline text-sm">
+                <button onClick={scrollToForm} className="text-primary underline text-sm">
                   Learn more
                 </button>
               </div>
