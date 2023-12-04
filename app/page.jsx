@@ -34,6 +34,7 @@ import { useRef, useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Link from "next/link";
+import ResponsiveSlider from "./components/Slider/ResponsiveSlider";
 
 export default function Home() {
   const form = useRef();
@@ -343,37 +344,31 @@ export default function Home() {
             <div className="relative z-20 features grid md:hidden gap-5">
               <div className="px-2">
                 <h4 className="font-semibold leading-10 mb-3 text-4xl">
-                  Fantastic <br /> features
+                  Amazing <br /> features
                 </h4>
-                <p className="text-slate-400 text-[15px]">
-                  Lorem ipsum dolor sit amet, conse ctetur adipi scing elit.
-                  Porttitor sed tellus massa adipiscing egestas placerat.
-                  Condimentum tempor lorem eu mi pretium nunc.
-                </p>
+                <ul className="list-disc list-outside pl-3 flex flex-col gap-3">
+                  <li> Explore the World of Confidential Transactions</li>
+                  <li>Engage in discreet cryptocurrency transactions </li>
+                  <li>
+                    Acquire and vend crypto at optimal rates without any
+                    transaction fees.
+                  </li>
+                  <li>
+                    Utilize dollar cards for seamless shopping and confidential
+                    payments worldwide.
+                  </li>
+                  <li>
+                    Swiftly exchange crypto without the need to wait for
+                    blockchain confirmations.
+                  </li>
+                  <li>
+                    Safely store your digital assets and earn up to 10% interest
+                    on your cryptocurrency holdings.
+                  </li>
+                </ul>
               </div>
               <div className="">
-                {features.map((item, idx) => (
-                  <div
-                    className={`feature-${
-                      idx + 1
-                    } mb-5 feature transition-all duration-300 ease-linear cursor-pointer p-5 px-10 rounded`}
-                    key={idx}
-                  >
-                    <Image
-                      src={item.img}
-                      width={50}
-                      height={50}
-                      alt={item.title}
-                    />
-                    <p className="my-3">{item.title}</p>
-                    <p className="text-sm mb-3 text-slate-400">
-                      {item.content}
-                    </p>
-                    <button className="text-primary underline text-sm">
-                      Learn more
-                    </button>
-                  </div>
-                ))}
+                <ResponsiveSlider reviews={features} />
               </div>
             </div>
             <div className="overflow-x-auto relative z-20 mt-16 md:mt-28 flex justify-center items-center gap-5 md:gap-14">

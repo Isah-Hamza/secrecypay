@@ -88,31 +88,44 @@ const ResponsiveSlider = ({ reviews }) => {
     <div>
       <Slider ref={sliderRef} {...settings}>
         {reviews.map((item, idx) => (
+          // <div
+          //   data-aos="fade-up"
+          //   key={idx}
+          //   className={` ${
+          //     idx !== 0 && "hidden md:block"
+          //   }  mr-5 bg-normal text-white p-8 sm:p-14 rounded-lg `}
+          // >
+          //   <p className="text-base sm:text-lg font-semibold">{item.review}</p>
+          //   <div className=" flex gap-3 sm:gap-5 mt-7 items-center">
+          //     <NextImage
+          //       className="overflow-hidden !rounded-full h-24 w-24"
+          //       src={item.img}
+          //       alt="img"
+          //     />
+          //     <div className="">
+          //       <p className="font-bold text-base md:text-xl mb-2.5">
+          //         {item.name}
+          //       </p>
+          //       <div className="flex items-center gap-1 ">
+          //         {[1, 2, 3, 4, 5].map((item) => (
+          //           <BiStar size={20} className="text-[#ff9505]" key={item} />
+          //         ))}
+          //       </div>
+          //     </div>
+          //   </div>
+          // </div>
           <div
-            data-aos="fade-up"
+            className={`feature-${
+              idx + 1
+            } mb-5 feature transition-all duration-300 ease-linear cursor-pointer p-5 px-10 rounded`}
             key={idx}
-            className={` ${
-              idx !== 0 && "hidden md:block"
-            }  mr-5 bg-normal text-white p-8 sm:p-14 rounded-lg `}
           >
-            <p className="text-base sm:text-lg font-semibold">{item.review}</p>
-            <div className=" flex gap-3 sm:gap-5 mt-7 items-center">
-              <NextImage
-                className="overflow-hidden !rounded-full h-24 w-24"
-                src={item.img}
-                alt="img"
-              />
-              <div className="">
-                <p className="font-bold text-base md:text-xl mb-2.5">
-                  {item.name}
-                </p>
-                <div className="flex items-center gap-1 ">
-                  {[1, 2, 3, 4, 5].map((item) => (
-                    <BiStar size={20} className="text-[#ff9505]" key={item} />
-                  ))}
-                </div>
-              </div>
-            </div>
+            <Image src={item.img} width={50} height={50} alt={item.title} />
+            <p className="my-3">{item.title}</p>
+            <p className="text-sm mb-3 text-slate-400">{item.content}</p>
+            <button className="text-primary underline text-sm">
+              Learn more
+            </button>
           </div>
         ))}
       </Slider>
