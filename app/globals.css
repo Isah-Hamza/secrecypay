@@ -11,6 +11,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.slick-arrow {
+  display: none !important;
+}
+
+.slick-track {
+  @apply !flex !gap-7;
+}
+
 .join-btn {
   background: linear-gradient(
     83.08deg,

@@ -1,5 +1,6 @@
 "use client";
 import { ImSpinner2 } from "react-icons/im";
+import Header from "@/app/components/Header";
 import Image from "next/image";
 import logo from "@/app/assets/images/logo.png";
 import black_arrow from "@/app/assets/images/arrow-right-black.png";
@@ -235,20 +236,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen">
       <div className="bg-black text-white pb-14">
-        <header className="max-w-[1200px] m-auto px-5 relative z-20 flex justify-between items-center py-10">
-          <div className="flex items-center gap-1 ">
-            <Image src={logo} alt="logo" width={20} height={30} />
-            <span>SECRECY PAY</span>
-          </div>
-          <button
-            onClick={scrollToForm}
-            href={"#waitlist-form"}
-            className="text-black join-btn font-semibold px-7 py-2.5 rounded-3xl text-sm"
-          >
-            {" "}
-            JOIN
-          </button>
-        </header>
+        <Header scrollToForm={scrollToForm} />
         <main className="max-w-[1200px] px-5 m-auto h-full flex flex-col">
           <div className="">
             <Image
@@ -279,7 +267,10 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 sm:gap-10">
-                  <button onClick={scrollToForm} className="req-to-join-btn font-semibold px-3 sm:px-7 py-3.5 rounded-3xl text-black flex items-center justify-center gap-3">
+                  <button
+                    onClick={scrollToForm}
+                    className="req-to-join-btn font-semibold px-3 sm:px-7 py-3.5 rounded-3xl text-black flex items-center justify-center gap-3"
+                  >
                     <span>Request to join</span>
                     <Image
                       src={black_arrow}
@@ -422,17 +413,9 @@ export default function Home() {
         className="bg-[#ebeff5] min-h-[200px] px-5 md:px-0 py-14"
       >
         <div className="max-w-[700px] m-auto">
-          <h3 className="text-2xl text-center font-semibold">
-            Fantastic features
-          </h3>
-          <p className="text-sm text-center mt-3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor
-            sed tellus <br /> adipiscing egestas placerat. Condimentum tempor
-            lorem eu mi pretium nunc.
-          </p>
           <form
             onSubmit={submitForm}
-            className="mt-7 text-white bg-black rounded-lg p-5 md:p-10 md:px-24"
+            className="my-7 text-white bg-black rounded-lg p-5 md:p-10 md:px-24"
           >
             <h3 className="text-3xl text-center font-semibold tracking-wider leading-9">
               Our Membership <br />
@@ -475,28 +458,6 @@ export default function Home() {
               Join the waitlist
             </button>
           </form>
-          <div className="mt-8 grid sm:grid-cols-3 gap-5">
-            {features
-              .filter((_, idx) => idx < 3)
-              .map((item, idx) => (
-                <div className="flex items-start gap-2" key={idx}>
-                  <Image
-                    key={idx}
-                    src={item.img}
-                    width={35}
-                    height={35}
-                    alt={item.title}
-                    className="mt-2"
-                  />
-                  <div>
-                    <p className="my-3 font-semibold">{item.title}</p>
-                    <p className="text-[10px] mb-3 text-slate-400">
-                      {item.content}
-                    </p>
-                  </div>
-                </div>
-              ))}
-          </div>
         </div>
       </div>
       <div className="px-5 text-white my-16 max-w-[1200px] mx-auto">
@@ -589,7 +550,10 @@ export default function Home() {
             </p>
           </div>
           <div className="flex gap-10 items-center">
-            <button onClick={scrollToForm} className="req-to-join-btn-black text-center font-semibold px-7 py-2.5 rounded-2xl text-white bg-black flex items-center gap-3">
+            <button
+              onClick={scrollToForm}
+              className="req-to-join-btn-black text-center font-semibold px-7 py-2.5 rounded-2xl text-white bg-black flex items-center gap-3"
+            >
               <span>Request to join</span>
             </button>
           </div>
