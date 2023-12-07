@@ -76,9 +76,9 @@ export default function Home() {
   ];
   const resources = [
     {
-      title: "Safe, Swift, Reliable: Secrecy Pay - Coming Soon!",
+      title: "Safe, Swift, Reliable: Coming Soon!",
       content:
-        "Get ready for the ultimate online money experience! Secrecy Pay is gearing up to revolutionize your transactions. Stay tuned for secure, lightning-fast, and reliable financial interactions.",
+        "Get ready for the ultimate online money experience! Secrecy Pay is gearing up to revolutionize your transactions. Stay tuned for secure, lightning fast, and reliable financial interactions.",
       img: resource1,
     },
     {
@@ -88,9 +88,9 @@ export default function Home() {
       img: resource2,
     },
     {
-      title: "Coming Soon: SecrecyPay - Your Trusted Money Companion",
+      title: "Coming Soon: Your Trusted Money Companion",
       content:
-        "Brace yourself for the arrival of SecrecyPay! Your trusted companion for secure, reliable, and hassle-free transactions. Prepare to experience money matters like never before!",
+        "Brace yourself for the arrival of SecrecyPay! Your trusted companion for secure, reliable, and hassle free transactions. Prepare to experience money matters like never before!",
       img: resource3,
     },
   ];
@@ -115,7 +115,7 @@ export default function Home() {
         },
         {
           q: "How can I sign up to get on board with Secrecy Pay?",
-          a: "Easy peasy! Just join the waitlist. Pop in your details, and we'll give you the heads-up as soon as the website's up and running.",
+          a: "Easy peasy! Just join the waitlist. Pop in your details, and we'll give you the heads up as soon as the website's up and running.",
         },
         {
           q: "Can I use Secrecy Pay from anywhere in the world?",
@@ -367,7 +367,7 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="">
+              <div className="container">
                 <ResponsiveSlider reviews={features} />
               </div>
             </div>

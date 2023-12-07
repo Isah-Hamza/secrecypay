@@ -10,12 +10,15 @@ body {
 html {
   scroll-behavior: smooth;
 }
-.carousel{
-  width:90%;
-  margin:0px auto;
+.carousel {
+  width: 90%;
+  margin: 0px auto;
 }
-.slick-slide{
-  margin:10px;
+.slick-list {
+  /* padding: 0; */
+}
+.slick-slide {
+  margin: 10px;
 }
 .slick-initialized {
   overflow: hidden;

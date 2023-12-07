@@ -22,9 +22,9 @@ const ResponsiveSlider = ({ reviews }) => {
   };
 
   const settings = {
-    className: "center",
+    // className: "center",
     centerMode: true,
-    centerPadding: "20px",
+    // centerPadding: "20px",
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -45,11 +45,11 @@ const ResponsiveSlider = ({ reviews }) => {
   };
 
   return (
-    <div className="block max-w-xs sm:max-w-sm">
+    <div className="container w-full max-w-sm">
       <Slider ref={sliderRef} {...settings}>
         {reviews.map((item, idx) => (
           <div
-            className={`mr-5 mb-5 cursor-pointer rounded`}
+            className={`mr-5 mb-5 cursor-pointer rounded w-full min-w-[300px]`}
             key={idx}
           >
             <Image src={item.img} width={50} height={50} alt={item.title} />
@@ -69,13 +69,13 @@ const ResponsiveSlider = ({ reviews }) => {
           onClick={previous}
           className="bg-white w-14 aspect-square rounded-full grid place-content-center"
         >
-          <MdOutlineArrowBackIosNew size={20} className='text-black' />
+          <MdOutlineArrowBackIosNew size={20} className="text-black" />
         </button>
         <button
           onClick={next}
           className="bg-white w-14 aspect-square rounded-full grid place-content-center"
         >
-          <MdOutlineArrowForwardIos size={20} className='text-black' />
+          <MdOutlineArrowForwardIos size={20} className="text-black" />
         </button>
       </div>
     </div>
