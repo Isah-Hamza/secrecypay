@@ -29,6 +29,8 @@ import country4 from "./assets/images/country4.png";
 import country5 from "./assets/images/country5.png";
 import country6 from "./assets/images/country6.png";
 import plus from "./assets/images/plus.png";
+import playStore from "./assets/images/get_google_play.svg";
+import appStore from "./assets/images/get_play_store.svg";
 
 import { useRef, useState } from "react";
 import { toast } from "react-toastify";
@@ -238,7 +240,7 @@ export default function Home() {
     <div className="relative min-h-screen">
       <div className="bg-black text-white pb-14">
         <Header scrollToForm={scrollToForm} />
-        <main className="max-w-[1200px] px-5 m-auto h-full flex flex-col">
+        <main className="max-w-[1300px] px-5 m-auto h-full flex flex-col">
           <div className="">
             <Image
               alt="arrow"
@@ -280,7 +282,10 @@ export default function Home() {
                       height={6}
                     />
                   </button>
-                  <button onClick={scrollToForm} className="text-sm text-white border border-white font-semibold px-3 sm:px-7 py-3.5 rounded-3xl flex items-center justify-center gap-3">
+                  <button
+                    onClick={scrollToForm}
+                    className="text-sm text-white border border-white font-semibold px-3 sm:px-7 py-3.5 rounded-3xl flex items-center justify-center gap-3"
+                  >
                     <span>LEARN MORE</span>
                     <Image
                       src={white_arrow}
@@ -335,7 +340,10 @@ export default function Home() {
                   />
                   <p className="my-3">{item.title}</p>
                   <p className="text-sm mb-3 text-slate-400">{item.content}</p>
-                  <button onClick={scrollToForm} className="text-primary underline text-sm">
+                  <button
+                    onClick={scrollToForm}
+                    className="text-primary underline text-sm"
+                  >
                     Learn more
                   </button>
                 </div>
@@ -368,7 +376,31 @@ export default function Home() {
                 </ul>
               </div>
               <div className="container">
-                <ResponsiveSlider reviews={features} />
+                {/* <ResponsiveSlider reviews={features} /> */}
+
+                {features.map((item, idx) => (
+                  <div
+                    className={`mb-7 feature transition-all duration-300 ease-linear cursor-pointer p-5 px-10 rounded`}
+                    key={idx}
+                  >
+                    <Image
+                      src={item.img}
+                      width={60}
+                      height={60}
+                      alt={item.title}
+                    />
+                    <p className="my-3">{item.title}</p>
+                    <p className="text-sm mb-3 text-slate-400">
+                      {item.content}
+                    </p>
+                    <button
+                      onClick={scrollToForm}
+                      className="text-primary underline text-sm"
+                    >
+                      Learn more
+                    </button>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="overflow-x-auto relative z-20 mt-16 md:mt-28 flex justify-center items-center gap-5 md:gap-14">
@@ -455,12 +487,13 @@ export default function Home() {
           </form>
         </div>
       </div>
-      <div className="px-5 text-white my-16 max-w-[1200px] mx-auto">
+      <div className="px-5 text-white my-16 max-w-[1300px] mx-auto">
         <div className="faqs ">
           <h3 className="text-3xl font-semibold ">Have a Question?</h3>
           <p className="text-slate-400 text-sm mb-10">
-          Get instant clarity and expert guidance.          </p>
-          <div className="mt-10 flex flex-col md:flex-row md:items-start gap-20 max-w-5xl m-auto">
+            Get instant clarity and expert guidance.{" "}
+          </p>
+          <div className="mt-10 flex flex-col md:flex-row md:items-start gap-20 max-w-6xl m-auto">
             <div className="overflow-x-auto md:w-[400px] flex md:grid gap-5">
               {faqs.map((item, idx) => (
                 <button
@@ -508,7 +541,8 @@ export default function Home() {
         <div className="resources mt-32">
           <h3 className="text-[26px] font-semibold ">Resources</h3>
           <p className="text-slate-400 text-sm mb-10">
-          Discover the hidden strategies and expert insights.          </p>
+            Discover the hidden strategies and expert insights.{" "}
+          </p>
           <div className="relative z-20 resources grid grid-cols-1 md:grid-cols-3 gap-5">
             {resources.map((item, idx) => (
               <div
@@ -520,7 +554,10 @@ export default function Home() {
                 <Image src={item.img} width={60} height={60} alt={item.title} />
                 <p className="my-3">{item.title}</p>
                 <p className="text-sm mb-3 text-slate-400">{item.content}</p>
-                <button onClick={scrollToForm} className="text-primary underline text-sm">
+                <button
+                  onClick={scrollToForm}
+                  className="text-primary underline text-sm"
+                >
                   Learn more
                 </button>
               </div>
@@ -529,7 +566,7 @@ export default function Home() {
         </div>
       </div>
       <div className="bg-primary mt-48">
-        <div className="max-w-[1200px] m-auto px-5 py-20 pb-28 flex gap-10 flex-col md:flex-row justify-between md:items-center">
+        <div className="max-w-[1300px] m-auto px-5 py-20 pb-28 flex gap-10 flex-col md:flex-row justify-between md:items-center">
           <div className="">
             <div className="text-4xl md:text-5xl my-3">
               <p>Buy & sell crypto</p>
@@ -542,18 +579,29 @@ export default function Home() {
               transactions made easy
             </p>
           </div>
-          <div className="flex gap-10 items-center">
-            <button
-              onClick={scrollToForm}
-              className="req-to-join-btn-black text-center font-semibold px-7 py-2.5 rounded-2xl text-white bg-black flex items-center gap-3"
-            >
-              <span>Request to join</span>
-            </button>
+          <div className="flex flex-col gap-7 md:mr-10">
+            <p className="text-lg font-semibold">Download App (Coming Soon)</p>
+            <div className="flex flex-col gap-5">
+              <Image
+                alt="arrow"
+                src={playStore}
+                height={50}
+                width={150}
+                className="cursor-pointer"
+              />
+              <Image
+                alt="arrow"
+                src={appStore}
+                height={50}
+                width={150}
+                className="cursor-pointer"
+              />
+            </div>
           </div>
         </div>
       </div>
       <footer className="text-white pt-14 pb-5">
-        <div className="text-sm flex flex-wrap justify-between gap-10 max-w-[1200px] px-5 m-auto">
+        <div className="text-sm flex flex-wrap justify-between gap-10 max-w-[1300px] px-5 m-auto">
           <div className="">
             <div className="flex items-center gap-1 ">
               <Image src={logo} alt="logo" width={20} height={30} />

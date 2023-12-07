@@ -5,7 +5,7 @@ import logo from "@/app/assets/images/logo.png";
 
 const index = ({ scrollToForm }) => {
   return (
-    <header className="max-w-[1200px] m-auto px-5 relative z-20 flex justify-between items-center py-10">
+    <header className="max-w-[1300px] m-auto px-5 relative z-20 flex justify-between items-center py-10">
       <div className="flex items-center gap-1 ">
         <Image src={logo} alt="logo" width={20} height={30} />
         <span>SECRECY PAY</span>
