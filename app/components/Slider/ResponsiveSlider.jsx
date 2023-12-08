@@ -101,7 +101,7 @@ import {
 // import NextImage from "@/components/atom/NextImage/NextImage";
 import Image from "next/image";
 
-const ResponsiveSlider = ({ reviews }) => {
+const ResponsiveSlider = ({ reviews , scrollToForm}) => {
   const sliderRef = useRef(null);
 
   const next = () => {
@@ -132,50 +132,63 @@ const ResponsiveSlider = ({ reviews }) => {
   };
 
   return (
-    <div className="w-[340px] m-auto">
+    <div className="w-[340px] m-auto mt-20">
       <Slider ref={sliderRef} {...settings}>
         {reviews.map((item, idx) => (
+          // <div
+          //   key={idx}
+          //   className={`border border-red-800 ${
+          //     idx !== 0 && "hidden md:block"
+          //   }  mr-5 bg-normal text-white p-8 sm:p-14 rounded-lg `}
+          // >
+          //   <p className="text-base sm:text-lg font-semibold">{item?.review}</p>
+          //   <div className=" flex gap-3 sm:gap-5 mt-7 items-center">
+          //     <Image
+          //       className="overflow-hidden !rounded-full h-24 w-24"
+          //       src={item?.img}
+          //       alt="img"
+          //     />
+          //     <div className="">
+          //       <p className="font-bold text-base md:text-xl mb-2.5">
+          //         {item?.name}
+          //       </p>
+          //       <div className="flex items-center gap-1 ">
+          //         {[1, 2, 3, 4, 5].map((item) => (
+          //           <BiStar size={20} className="text-[#ff9505]" key={item} />
+          //         ))}
+          //       </div>
+          //     </div>
+          //   </div>
+          // </div>
           <div
-            data-aos="fade-up"
+            className={`mb-7 feature transition-all duration-300 ease-linear cursor-pointer p-5 px-10 rounded`}
             key={idx}
-            className={`border border-red-800 ${
-              idx !== 0 && "hidden md:block"
-            }  mr-5 bg-normal text-white p-8 sm:p-14 rounded-lg `}
           >
-            <p className="text-base sm:text-lg font-semibold">{item?.review}</p>
-            <div className=" flex gap-3 sm:gap-5 mt-7 items-center">
-              <Image
-                className="overflow-hidden !rounded-full h-24 w-24"
-                src={item?.img}
-                alt="img"
-              />
-              <div className="">
-                <p className="font-bold text-base md:text-xl mb-2.5">
-                  {item?.name}
-                </p>
-                <div className="flex items-center gap-1 ">
-                  {[1, 2, 3, 4, 5].map((item) => (
-                    <BiStar size={20} className="text-[#ff9505]" key={item} />
-                  ))}
-                </div>
-              </div>
-            </div>
+            <Image src={item.img} width={60} height={60} alt={item.title} />
+            <p className="my-3">{item.title}</p>
+            <p className="text-sm mb-3 text-slate-400">{item.content}</p>
+            <button
+              onClick={scrollToForm}
+              className="text-primary underline text-sm"
+            >
+              Learn more
+            </button>
           </div>
         ))}
       </Slider>
       <div
         // data-aos=""
-        className="flex justify-center items-center mt-12 gap-4"
+        className="flex justify-center items-center gap-4"
       >
         <button
           onClick={previous}
-          className="bg-white w-14 aspect-square rounded-full grid place-content-center"
+          className="bg-white text-black w-14 aspect-square rounded-full grid place-content-center"
         >
           <MdOutlineArrowBackIosNew size={20} />
         </button>
         <button
           onClick={next}
-          className="bg-white w-14 aspect-square rounded-full grid place-content-center"
+          className="bg-white text-black w-14 aspect-square rounded-full grid place-content-center"
         >
           <MdOutlineArrowForwardIos size={20} />
         </button>

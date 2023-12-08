@@ -377,30 +377,7 @@ export default function Home() {
                 </ul>
               </div>
               <div className="container">
-                <ResponsiveSlider reviews={features} />
-                {/* {features.map((item, idx) => (
-                  <div
-                    className={`mb-7 feature transition-all duration-300 ease-linear cursor-pointer p-5 px-10 rounded`}
-                    key={idx}
-                  >
-                    <Image
-                      src={item.img}
-                      width={60}
-                      height={60}
-                      alt={item.title}
-                    />
-                    <p className="my-3">{item.title}</p>
-                    <p className="text-sm mb-3 text-slate-400">
-                      {item.content}
-                    </p>
-                    <button
-                      onClick={scrollToForm}
-                      className="text-primary underline text-sm"
-                    >
-                      Learn more
-                    </button>
-                  </div>
-                ))} */}
+                <ResponsiveSlider reviews={features} scrollToForm={scrollToForm} />
               </div>
             </div>
             <div className="overflow-x-auto relative z-20 mt-16 md:mt-28 flex justify-center items-center gap-5 md:gap-14">
