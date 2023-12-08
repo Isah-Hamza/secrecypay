@@ -377,7 +377,10 @@ export default function Home() {
                 </ul>
               </div>
               <div className="container">
-                <ResponsiveSlider reviews={features} scrollToForm={scrollToForm} />
+                <ResponsiveSlider
+                  reviews={features}
+                  scrollToForm={scrollToForm}
+                />
               </div>
             </div>
             <div className="overflow-x-auto relative z-20 mt-16 md:mt-28 flex justify-center items-center gap-5 md:gap-14">
@@ -464,7 +467,10 @@ export default function Home() {
           </form>
         </div>
       </div>
-      <div ref={faq} className="scroll-pt-20 px-5 text-white pt-16 max-w-[1300px] mx-auto">
+      <div
+        ref={faq}
+        className="scroll-pt-20 px-5 text-white pt-16 max-w-[1300px] mx-auto"
+      >
         <div className="faqs" id="faqs">
           <h3 className="text-3xl font-semibold ">Have a Question?</h3>
           <p className="text-slate-400 text-sm mb-10">
@@ -520,7 +526,7 @@ export default function Home() {
           <p className="text-slate-400 text-sm mb-10">
             Discover the hidden strategies and expert insights.{" "}
           </p>
-          <div className="relative z-20 resources grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="relative z-20 resources hidden md:grid grid-cols-1 md:grid-cols-3 gap-5">
             {resources.map((item, idx) => (
               <div
                 className={`resource-${
@@ -539,6 +545,9 @@ export default function Home() {
                 </button>
               </div>
             ))}
+          </div>
+          <div className="container block md:hidden">
+            <ResponsiveSlider reviews={resources} scrollToForm={scrollToForm} />
           </div>
         </div>
       </div>
