@@ -40,6 +40,7 @@ import ResponsiveSlider from "./components/Slider/ResponsiveSlider";
 
 export default function Home() {
   const form = useRef();
+  const faq = useRef();
   const [user, setUser] = useState({ email: "", fullname: "" });
   const [activeCategory, setActiveCategory] = useState(1);
   const [activeFaq, setActiveFaq] = useState(0);
@@ -487,8 +488,8 @@ export default function Home() {
           </form>
         </div>
       </div>
-      <div className="px-5 text-white my-16 max-w-[1300px] mx-auto">
-        <div className="faqs ">
+      <div ref={faq} className="scroll-pt-20 px-5 text-white pt-16 max-w-[1300px] mx-auto">
+        <div className="faqs" id="faqs">
           <h3 className="text-3xl font-semibold ">Have a Question?</h3>
           <p className="text-slate-400 text-sm mb-10">
             Get instant clarity and expert guidance.{" "}
@@ -565,7 +566,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-primary mt-48">
+      <div className="bg-primary mt-32">
         <div className="max-w-[1300px] m-auto px-5 py-20 pb-28 flex gap-10 flex-col md:flex-row justify-between md:items-center">
           <div className="">
             <div className="text-4xl md:text-5xl my-3">
@@ -660,8 +661,14 @@ export default function Home() {
           <div className="">
             <h4 className="font-semibold text-base mb-7">Help</h4>
             <ul className="flex flex-col gap-4">
-              <li className="">Help Center</li>
-              <li>FAQs</li>
+              <li className="hover:text-primary">
+                <a href="mailto:info@secrecypay.com">Help Center</a>
+              </li>
+              <li className="hover:text-primary cursor-pointer">
+                <button onClick={() => faq.current.scrollIntoView()}>
+                  FAQs
+                </button>
+              </li>
             </ul>
           </div>
           <div className="">
