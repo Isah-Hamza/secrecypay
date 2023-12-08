@@ -114,11 +114,11 @@ const ResponsiveSlider = ({ reviews , scrollToForm}) => {
 
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
-    autoplaySpeed: 600,
+    autoplay: true,
+    autoplaySpeed: 2500,
     responsive: [
       {
         breakpoint: 1024,
@@ -132,7 +132,7 @@ const ResponsiveSlider = ({ reviews , scrollToForm}) => {
   };
 
   return (
-    <div className="w-[340px] m-auto mt-20">
+    <div className="w-[340px] m-auto my-14">
       <Slider ref={sliderRef} {...settings}>
         {reviews.map((item, idx) => (
           // <div
@@ -182,15 +182,15 @@ const ResponsiveSlider = ({ reviews , scrollToForm}) => {
       >
         <button
           onClick={previous}
-          className="bg-white text-black w-14 aspect-square rounded-full grid place-content-center"
+          className="bg-white text-black w-12 aspect-square rounded-full grid place-content-center"
         >
-          <MdOutlineArrowBackIosNew size={20} />
+          <MdOutlineArrowBackIosNew size={18} />
         </button>
         <button
           onClick={next}
-          className="bg-white text-black w-14 aspect-square rounded-full grid place-content-center"
+          className="bg-white text-black w-12 aspect-square rounded-full grid place-content-center"
         >
-          <MdOutlineArrowForwardIos size={20} />
+          <MdOutlineArrowForwardIos size={18} />
         </button>
       </div>
     </div>
