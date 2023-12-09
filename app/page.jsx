@@ -28,6 +28,7 @@ import country3 from "./assets/images/country3.png";
 import country4 from "./assets/images/country4.png";
 import country5 from "./assets/images/country5.png";
 import country6 from "./assets/images/country6.png";
+import country7 from './assets/images/uae-flag.jpg';
 import plus from "./assets/images/plus.png";
 import playStore from "./assets/images/get_google_play.svg";
 import appStore from "./assets/images/get_play_store.svg";
@@ -106,6 +107,7 @@ export default function Home() {
     country4,
     country5,
     country6,
+    country7,
   ];
 
   const faqs = [
