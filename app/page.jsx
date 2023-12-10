@@ -593,7 +593,7 @@ export default function Home() {
           <div className="">
             <div className="flex items-center gap-1 ">
               <Image src={logo} alt="logo" width={20} height={30} />
-              <span>SECRECY PAY</span>
+              <span className='text-lg font-extrabold'>SECRECY PAY</span>
             </div>
             <p className="max-w-xs text-sm mt-2 ">
               Buy and sell crypto in a flash with Secrecy Pay. Fast, secure
