@@ -480,8 +480,8 @@ export default function Home() {
           <p className="text-slate-400 text-sm mb-10">
             Get instant clarity and expert guidance.{" "}
           </p>
-          <div className="mt-10 flex flex-col md:flex-row md:items-start gap-20 max-w-6xl m-auto">
-            <div className="overflow-x-auto md:w-[400px] flex md:grid gap-5">
+          <div className=" md:px-0 mt-10 flex flex-col md:flex-row md:items-start gap-14 md:gap-20 max-w-6xl m-auto">
+            <div className="p-3 border-y md:border-y-0 overflow-x-auto md:w-[400px] flex md:grid gap-5">
               {faqs.map((item, idx) => (
                 <button
                   key={idx}
@@ -494,7 +494,7 @@ export default function Home() {
                 </button>
               ))}
             </div>
-            <div>
+            <div className="w-full md:w-[calc(100vw-400px)]">
               {faqs[activeCategory].faqs.map((item, idx) => (
                 <div
                   onClick={() => setActiveFaq(idx)}
