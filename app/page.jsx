@@ -401,15 +401,13 @@ export default function Home() {
                 Available in these countries
               </p>
               <div className="overflow-x-auto">
-                <div className="min-w-[840px] flex items-center justify-center gap-5 md:gap-10 mt-10">
+                <div className="min-w-[610px] sm:min-w-[840px] flex items-center justify-center gap-5 md:gap-10 mt-10">
                   {countries.map((item, idx) => (
                     <Image
                       key={idx}
                       src={item}
-                      // width={100}
-                      // height={40}
                       alt="country"
-                      className="rounded-lg max-w-[100px]"
+                      className="rounded-lg w-[70px] sm:w-[100px] sm:max-w-[100px]"
                     />
                   ))}
                 </div>
