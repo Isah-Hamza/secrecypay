@@ -28,7 +28,7 @@ import country3 from "./assets/images/country3.png";
 import country4 from "./assets/images/country4.png";
 import country5 from "./assets/images/country5.png";
 import country6 from "./assets/images/country6.png";
-import country7 from './assets/images/uae-flag.jpg';
+import country7 from "./assets/images/uae-flag.png";
 import plus from "./assets/images/plus.png";
 import playStore from "./assets/images/get_google_play.svg";
 import appStore from "./assets/images/get_play_store.svg";
@@ -400,17 +400,19 @@ export default function Home() {
               <p className="text-lg text-slate-500 text-center">
                 Available in these countries
               </p>
-              <div className="overflow-x-auto flex items-center justify-center gap-5 md:gap-10 mt-10">
-                {countries.map((item, idx) => (
-                  <Image
-                    key={idx}
-                    src={item}
-                    width={100}
-                    height={40}
-                    alt="country"
-                    className="rounded-lg"
-                  />
-                ))}
+              <div className="overflow-x-auto">
+                <div className="min-w-[600px] flex items-center justify-center gap-5 md:gap-10 mt-10">
+                  {countries.map((item, idx) => (
+                    <Image
+                      key={idx}
+                      src={item}
+                      width={100}
+                      height={40}
+                      alt="country"
+                      className="rounded-lg"
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -593,7 +595,7 @@ export default function Home() {
           <div className="">
             <div className="flex items-center gap-1 ">
               <Image src={logo} alt="logo" width={20} height={30} />
-              <span className='text-lg font-extrabold'>SECRECY PAY</span>
+              <span className="text-lg font-extrabold">SECRECY PAY</span>
             </div>
             <p className="max-w-xs text-sm mt-2 ">
               Buy and sell crypto in a flash with Secrecy Pay. Fast, secure
