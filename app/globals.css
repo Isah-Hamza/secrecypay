@@ -84,12 +84,14 @@ html {
 }
 
 .features .feature,
-.resources .resource {
+.resources .resource,
+.feature{
   background: linear-gradient(180deg, #131a14 0%, rgba(19, 26, 20, 0) 100%);
 }
 
 .features .feature:hover,
-.resources .resource:hover {
+.resources .resource:hover
+.feature:hover {
   scale: 105%;
   background: linear-gradient(45.84deg, #131a14 1.97%, #253426 97.02%);
   box-shadow: -40px 24px 64px 0px #000000d9;

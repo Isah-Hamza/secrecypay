@@ -673,7 +673,7 @@ export default function Home() {
           </div>
         </div>
         <p className="mt-16 text-center text-sm text-white/80">
-          © 2023 SecrecyPay
+          © {new Date().getFullYear()} SecrecyPay
         </p>
       </footer>
     </div>
