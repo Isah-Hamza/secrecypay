@@ -38,6 +38,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import Link from "next/link";
 import ResponsiveSlider from "./components/Slider/ResponsiveSlider";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const form = useRef();
@@ -578,7 +579,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <footer className="text-white pt-14 pb-5">
+      {/* <footer className="text-white pt-14 pb-5">
         <div className="text-sm flex flex-wrap justify-between gap-10 max-w-[1300px] px-5 m-auto">
           <div className="">
             <div className="flex items-center gap-1 ">
@@ -656,7 +657,8 @@ export default function Home() {
         <p className="mt-16 text-center text-sm text-white/80">
           © {new Date().getFullYear()} SecrecyPay
         </p>
-      </footer>
+      </footer> */}
+      <Footer />
     </div>
   );
 }
