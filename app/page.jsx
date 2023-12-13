@@ -385,17 +385,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            {/* <div className="overflow-x-auto relative z-20 mt-16 md:mt-28 flex justify-center items-center gap-5 md:gap-14">
-              {logos.map((item, idx) => (
-                <Image
-                  key={idx}
-                  src={item}
-                  width={120}
-                  height={30}
-                  alt="logo"
-                />
-              ))}
-            </div> */}
+
             <div className="mt-28">
               <p className="text-lg text-slate-500 text-center">
                 Available in these countries
@@ -600,13 +590,6 @@ export default function Home() {
               transactions made easy
             </p>
           </div>
-          {/* <div className="">
-            <h4 className="font-semibold text-base mb-5">Company</h4>
-            <ul className="flex flex-col gap-4">
-              <li className="">About Us</li>
-              <li>Newsletter</li>
-            </ul>
-          </div> */}
           <div className="mt-10 sm:mt-0">
             <h4 className="font-semibold text-base mb-5">Community</h4>
             <ul className="flex flex-col gap-4">
