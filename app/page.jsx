@@ -25,6 +25,7 @@ import Footer from "./components/Footer";
 import FAQ from "./components/FAQ";
 import Form from "./components/Form";
 import LearnMoreButton from "./components/Button";
+import FeaturesDesktop from "./components/FeaturesDesktop";
 
 export default function Home() {
   const features = [
@@ -125,55 +126,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="hidden relative z-20 features md:grid grid-cols-3 gap-5">
-              <div className="px-2">
-                <h4 className="font-semibold leading-10 mb-3 text-4xl">
-                  Amazing <br /> features
-                </h4>
-                <div className="text-slate-400 text-xs">
-                  <ul className="list-disc disc-inside">
-                    <li> Explore the World of Confidential Transactions</li>
-                    <li>Engage in discreet cryptocurrency transactions </li>
-                    <li>
-                      Acquire and vend crypto at optimal rates without any
-                      transaction fees.
-                    </li>
-                    <li>
-                      Utilize dollar cards for seamless shopping and
-                      confidential payments worldwide.
-                    </li>
-                    <li>
-                      Swiftly exchange crypto without the need to wait for
-                      blockchain confirmations.
-                    </li>
-                    <li>
-                      Safely store your digital assets and earn up to 10%
-                      interest on your cryptocurrency holdings.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              {features.map((item, idx) => (
-                <div
-                  className={`feature-${
-                    idx + 1
-                  } feature transition-all duration-300 ease-linear cursor-pointer p-5 px-10 rounded`}
-                  key={idx}
-                >
-                  <Image
-                    src={item.img}
-                    width={60}
-                    height={60}
-                    alt={item.title}
-                  />
-                  <p className="my-3">{item.title}</p>
-                  <p className="text-sm mb-3 text-slate-400">{item.content}</p>
-                  <LearnMoreButton className="text-primary underline text-sm">
-                    Learn more
-                  </LearnMoreButton>
-                </div>
-              ))}
-            </div>
+          <FeaturesDesktop />
             <div className="relative z-20 features grid md:hidden gap-5">
               <div className="px-2">
                 <h4 className="font-semibold leading-10 mb-3 text-4xl">
