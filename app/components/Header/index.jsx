@@ -1,9 +1,15 @@
+'use client'
 import Image from "next/image";
 import React from "react";
 import logo from "@/app/assets/images/logo.png";
 
 
-const index = ({ scrollToForm }) => {
+const index = ({  }) => {
+
+  const scrollToForm = () => {
+    document.querySelector('#waitlist-form').scrollIntoView()
+  };
+
   return (
     <header className="max-w-[1300px] m-auto px-5 relative z-20 flex justify-between items-center py-10">
       <div className="flex items-center gap-1 ">

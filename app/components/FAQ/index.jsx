@@ -8,10 +8,14 @@ import resource2 from "/app/assets/images/speed.png";
 import resource3 from "/app/assets/images/trusted.png";
 import plus from "/app/assets/images/plus.png";
 
-const FAQ = ({ scrollToForm }) => {
+const FAQ = ({  }) => {
     const faq = useRef();
     const [activeCategory, setActiveCategory] = useState(1);
     const [activeFaq, setActiveFaq] = useState(0);
+
+    const scrollToForm = () => {
+        document.querySelector('#waitlist-form').scrollIntoView()
+      };
 
     const resources = [
         {
@@ -206,7 +210,7 @@ const FAQ = ({ scrollToForm }) => {
         ))}
       </div>
       <div className="container block md:hidden">
-        <ResponsiveSlider reviews={resources} scrollToForm={scrollToForm} />
+        <ResponsiveSlider reviews={resources} />
       </div>
     </div>
   </div>

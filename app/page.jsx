@@ -1,4 +1,3 @@
-"use client";
 import Header from "@/app/components/Header";
 import Image from "next/image";
 import black_arrow from "@/app/assets/images/arrow-right-black.png";
@@ -25,10 +24,9 @@ import ResponsiveSlider from "./components/Slider/ResponsiveSlider";
 import Footer from "./components/Footer";
 import FAQ from "./components/FAQ";
 import Form from "./components/Form";
+import LearnMoreButton from "./components/Button";
 
 export default function Home() {
-
-
   const features = [
     {
       title: "Experience Zero Fee Swap",
@@ -72,15 +70,10 @@ export default function Home() {
     country7,
   ];
 
-
-  const scrollToForm = () => {
-    document.querySelector('#waitlist-form').scrollIntoView()
-  };
-
   return (
     <div className="relative min-h-screen">
       <div className="bg-black text-white pb-14">
-        <Header scrollToForm={scrollToForm} />
+        <Header />
         <main className="max-w-[1300px] px-5 m-auto h-full flex flex-col">
           <div className="">
             <Image
@@ -111,10 +104,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 sm:gap-10">
-                  <button
-                    onClick={scrollToForm}
-                    className="req-to-join-btn font-semibold px-3 sm:px-7 py-3.5 rounded-3xl text-black flex items-center justify-center gap-3"
-                  >
+                  <LearnMoreButton className="req-to-join-btn font-semibold px-3 sm:px-7 py-3.5 rounded-3xl text-black flex items-center justify-center gap-3">
                     <span>Request to join</span>
                     <Image
                       src={black_arrow}
@@ -122,11 +112,8 @@ export default function Home() {
                       width={10}
                       height={6}
                     />
-                  </button>
-                  <button
-                    onClick={scrollToForm}
-                    className="text-sm text-white border border-white font-semibold px-3 sm:px-7 py-3.5 rounded-3xl flex items-center justify-center gap-3"
-                  >
+                  </LearnMoreButton>
+                  <LearnMoreButton className="text-sm text-white border border-white font-semibold px-3 sm:px-7 py-3.5 rounded-3xl flex items-center justify-center gap-3">
                     <span>LEARN MORE</span>
                     <Image
                       src={white_arrow}
@@ -134,7 +121,7 @@ export default function Home() {
                       width={10}
                       height={6}
                     />
-                  </button>
+                  </LearnMoreButton>
                 </div>
               </div>
             </div>
@@ -181,12 +168,9 @@ export default function Home() {
                   />
                   <p className="my-3">{item.title}</p>
                   <p className="text-sm mb-3 text-slate-400">{item.content}</p>
-                  <button
-                    onClick={scrollToForm}
-                    className="text-primary underline text-sm"
-                  >
+                  <LearnMoreButton className="text-primary underline text-sm">
                     Learn more
-                  </button>
+                  </LearnMoreButton>
                 </div>
               ))}
             </div>
@@ -217,10 +201,7 @@ export default function Home() {
                 </ul>
               </div>
               <div className="container">
-                <ResponsiveSlider
-                  reviews={features}
-                  scrollToForm={scrollToForm}
-                />
+                <ResponsiveSlider reviews={features} />
               </div>
             </div>
 
@@ -245,7 +226,7 @@ export default function Home() {
         </main>
       </div>
       <Form />
-      <FAQ scrollToForm={scrollToForm} />
+      <FAQ />
 
       <div className="bg-primary mt-32">
         <div className="max-w-[1300px] m-auto px-5 py-20 pb-28 flex gap-10 flex-col md:flex-row justify-between md:items-center">

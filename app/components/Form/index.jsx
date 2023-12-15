@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import { ImSpinner2 } from "react-icons/im";
 import { toast } from "react-toastify";
