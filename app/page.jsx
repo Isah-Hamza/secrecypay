@@ -12,7 +12,6 @@ import feature3 from "./assets/images/send_funds.png";
 import feature4 from "./assets/images/simplified_payment.png";
 import feature5 from "./assets/images/get_paid.png";
 
-
 import logo1 from "./assets/images/logo1.png";
 import logo2 from "./assets/images/logo2.png";
 import logo3 from "./assets/images/logo3.png";
@@ -35,10 +34,11 @@ import Link from "next/link";
 import ResponsiveSlider from "./components/Slider/ResponsiveSlider";
 import Footer from "./components/Footer";
 import FAQ from "./components/FAQ";
+import Form from "./components/Form";
 
 export default function Home() {
   const form = useRef();
- 
+
   const [user, setUser] = useState({ email: "", fullname: "" });
   const [loading, setLoading] = useState(false);
 
@@ -87,30 +87,8 @@ export default function Home() {
     country7,
   ];
 
- 
-
   // const endpoint = "http://localhost/secrecy-backend/server.php";
   const endpoint = "https://secrecypay.com/server/server.php";
-
-  const submitForm = async (e) => {
-    setLoading(true);
-    e.preventDefault();
-    await axios
-      .post(endpoint, user, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Accept: "*/*",
-        },
-      })
-      .then((res) => {
-        successNotification(res.data.message);
-      })
-      .catch((e) => {
-        console.log(e.response.data.error);
-        errorNotification(e.response.data.error);
-      })
-      .finally(() => setLoading(false));
-  };
 
   const successNotification = (msg) =>
     toast.success(msg ?? "Successfully subscribed. Thank you!", {
@@ -295,145 +273,9 @@ export default function Home() {
           </div>
         </main>
       </div>
-      <div
-        ref={form}
-        id="waitlist-form"
-        className="bg-[#ebeff5] min-h-[200px] px-5 md:px-0 py-14"
-      >
-        <div className="max-w-[700px] m-auto">
-          <form
-            onSubmit={submitForm}
-            className="my-7 text-white bg-black rounded-lg p-5 md:p-10 md:px-24"
-          >
-            <h3 className="text-3xl text-center font-semibold tracking-wider leading-9">
-              Our Membership <br />
-              is almost here
-            </h3>
-            <p className="text-sm text-center mb-7 mt-3">
-              Information and connections that help you execute and scale your
-              idea or business. stay informed about out launch and become our
-              first members.
-            </p>
-            <input
-              value={user.fullname}
-              onChange={(e) =>
-                setUser((prev) => ({ ...prev, fullname: e.target.value }))
-              }
-              type="text"
-              name="fullname"
-              placeholder="Fullname"
-              className="outline-none w-full text-sm bg-[#D9D9D940] p-3 rounded-md"
-            />
-            <input
-              name="email"
-              type="email"
-              required
-              placeholder="Email address"
-              className="my-3 outline-none w-full text-sm bg-[#D9D9D940] p-3 rounded-md"
-              value={user.email}
-              onChange={(e) =>
-                setUser((prev) => ({ ...prev, email: e.target.value }))
-              }
-            />
-            <button
-              disabled={loading}
-              type="submit"
-              className="flex items-center justify-center gap-3 disabled:opacity-75 w-full text-sm text-white bg-primary font-medium px-7 py-3.5 rounded-md"
-            >
-              {loading ? (
-                <ImSpinner2 className="animate-spin" size={20} />
-              ) : null}
-              Join the waitlist
-            </button>
-          </form>
-        </div>
-      </div>
+      <Form />
       <FAQ scrollToForm={scrollToForm} />
-      {/* <div
-        id="faq"
-        ref={faq}
-        className="scroll-pt-20 px-5 text-white pt-16 max-w-[1300px] mx-auto"
-      >
-        <div className="faqs" id="faqs">
-          <h3 className="text-3xl font-semibold ">Have a Question?</h3>
-          <p className="text-slate-400 text-sm mb-10">
-            Get instant clarity and expert guidance.{" "}
-          </p>
-          <div className=" md:px-0 mt-10 flex flex-col md:flex-row md:items-start gap-14 md:gap-20 max-w-6xl m-auto">
-            <div className="p-3 border-y md:border-y-0 overflow-x-auto md:w-[400px] flex md:grid gap-5">
-              {faqs.map((item, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveCategory(idx)}
-                  className={`px-7 py-3 rounded-md text-sm ${
-                    activeCategory == idx && "bg-[#191919] text-white"
-                  }`}
-                >
-                  {item.title}
-                </button>
-              ))}
-            </div>
-            <div className="w-full md:w-[calc(100vw-400px)]">
-              {faqs[activeCategory].faqs.map((item, idx) => (
-                <div
-                  onClick={() => setActiveFaq(idx)}
-                  key={idx}
-                  className="mb-3 cursor-pointer border-b border-slate-800 py-2"
-                >
-                  <div className="mb-2 flex items-center justify-between gap-10">
-                    <p className="font-medium">{item.q}</p>
-                    <Image
-                      src={plus}
-                      width={10}
-                      height={10}
-                      alt={"plus"}
-                      className={`${
-                        activeFaq == idx
-                      } && 'origin-center rotate-45'`}
-                    />
-                  </div>
-                  <p
-                    className={`pb-2 text-sm text-slate-300 ${
-                      activeFaq !== idx && "hidden"
-                    }`}
-                  >
-                    {item.a}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="resources mt-32">
-          <h3 className="text-[26px] font-semibold ">Resources</h3>
-          <p className="text-slate-400 text-sm mb-10">
-            Discover the hidden strategies and expert insights.{" "}
-          </p>
-          <div className="relative z-20 resources hidden md:grid grid-cols-1 md:grid-cols-3 gap-5">
-            {resources.map((item, idx) => (
-              <div
-                className={`resource-${
-                  idx + 1
-                } resource transition-all duration-300 ease-linear cursor-pointer p-5 px-10 rounded`}
-                key={idx}
-              >
-                <Image src={item.img} width={60} height={60} alt={item.title} />
-                <p className="my-3">{item.title}</p>
-                <p className="text-sm mb-3 text-slate-400">{item.content}</p>
-                <button
-                  onClick={scrollToForm}
-                  className="text-primary underline text-sm"
-                >
-                  Learn more
-                </button>
-              </div>
-            ))}
-          </div>
-          <div className="container block md:hidden">
-            <ResponsiveSlider reviews={resources} scrollToForm={scrollToForm} />
-          </div>
-        </div>
-      </div> */}
+
       <div className="bg-primary mt-32">
         <div className="max-w-[1300px] m-auto px-5 py-20 pb-28 flex gap-10 flex-col md:flex-row justify-between md:items-center">
           <div className="">
@@ -469,85 +311,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <footer className="text-white pt-14 pb-5">
-        <div className="text-sm flex flex-wrap justify-between gap-10 max-w-[1300px] px-5 m-auto">
-          <div className="">
-            <div className="flex items-center gap-1 ">
-              <Image src={logo} alt="logo" width={20} height={30} />
-              <span className="text-lg font-extrabold">SECRECY PAY</span>
-            </div>
-            <p className="max-w-xs text-sm mt-2 ">
-              Buy and sell crypto in a flash with Secrecy Pay. Fast, secure
-              transactions made easy
-            </p>
-          </div>
-          <div className="mt-10 sm:mt-0">
-            <h4 className="font-semibold text-base mb-5">Community</h4>
-            <ul className="flex flex-col gap-4">
-              <li className="hover:text-primary">
-                {" "}
-                <a
-                  target="_blank"
-                  href="https://x.com/secrecypay?s=21&t=1cONdDNrW1DXiKkRQxYzgw"
-                >
-                  Twitter
-                </a>{" "}
-              </li>
-              <li className="hover:text-primary">
-                {" "}
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/company/secrecy-pay/"
-                >
-                  LinkedIn
-                </a>{" "}
-              </li>
-              <li className="hover:text-primary">
-                {" "}
-                <a target="_blank" href="https://t.me/+1LQb4qZwsxIzYTM0">
-                  Telegram
-                </a>{" "}
-              </li>
-              <li className="hover:text-primary">
-                {" "}
-                <a
-                  target="_blank"
-                  href="https://instagram.com/secrecypayhq?igshid=MzMyNGUyNmU2YQ%3D%3D&utm_source=qr"
-                >
-                  Instagram
-                </a>{" "}
-              </li>
-            </ul>
-          </div>
-          <div className="mt-10 sm:mt-0">
-            <h4 className="font-semibold text-base mb-7">Help</h4>
-            <ul className="flex flex-col gap-4">
-              <li className="hover:text-primary">
-                <a href="mailto:info@secrecypay.com">Help Center</a>
-              </li>
-              <li className="hover:text-primary cursor-pointer">
-                <button onClick={() => faq.current.scrollIntoView()}>
-                  FAQs
-                </button>
-              </li>
-            </ul>
-          </div>
-          <div className="mt-10 sm:mt-0">
-            <h4 className="font-semibold text-base mb-7">Contact Us</h4>
-            <ul className="flex flex-col gap-4">
-              <li className="hover:text-primary">
-                <a href="mailto:info@secrecypay.com">Mail</a>
-              </li>
-              <li className="hover:text-primary">
-                <a href="tel:+1234567890">Phone</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <p className="mt-16 text-center text-sm text-white/80">
-          © {new Date().getFullYear()} SecrecyPay
-        </p>
-      </footer> */}
       <Footer />
     </div>
   );
