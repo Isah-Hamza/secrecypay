@@ -1,5 +1,4 @@
 "use client";
-import { ImSpinner2 } from "react-icons/im";
 import Header from "@/app/components/Header";
 import Image from "next/image";
 import black_arrow from "@/app/assets/images/arrow-right-black.png";
@@ -12,11 +11,6 @@ import feature3 from "./assets/images/send_funds.png";
 import feature4 from "./assets/images/simplified_payment.png";
 import feature5 from "./assets/images/get_paid.png";
 
-import logo1 from "./assets/images/logo1.png";
-import logo2 from "./assets/images/logo2.png";
-import logo3 from "./assets/images/logo3.png";
-import logo4 from "./assets/images/logo4.png";
-
 import country1 from "./assets/images/country1.png";
 import country2 from "./assets/images/country2.png";
 import country3 from "./assets/images/country3.png";
@@ -27,20 +21,13 @@ import country7 from "./assets/images/uae-flag.png";
 import playStore from "./assets/images/get_google_play.svg";
 import appStore from "./assets/images/get_play_store.svg";
 
-import { useRef, useState } from "react";
-import { toast } from "react-toastify";
-import axios from "axios";
-import Link from "next/link";
 import ResponsiveSlider from "./components/Slider/ResponsiveSlider";
 import Footer from "./components/Footer";
 import FAQ from "./components/FAQ";
 import Form from "./components/Form";
 
 export default function Home() {
-  const form = useRef();
 
-  const [user, setUser] = useState({ email: "", fullname: "" });
-  const [loading, setLoading] = useState(false);
 
   const features = [
     {
@@ -75,8 +62,6 @@ export default function Home() {
     },
   ];
 
-  const logos = [logo1, logo2, logo3, logo4];
-
   const countries = [
     country1,
     country2,
@@ -87,23 +72,9 @@ export default function Home() {
     country7,
   ];
 
-  // const endpoint = "http://localhost/secrecy-backend/server.php";
-  const endpoint = "https://secrecypay.com/server/server.php";
-
-  const successNotification = (msg) =>
-    toast.success(msg ?? "Successfully subscribed. Thank you!", {
-      theme: "colored",
-      hideProgressBar: true,
-    });
-
-  const errorNotification = (msg) =>
-    toast.error(msg ?? "An error occured. Try again!", {
-      theme: "colored",
-      hideProgressBar: true,
-    });
 
   const scrollToForm = () => {
-    form.current.scrollIntoView();
+    document.querySelector('#waitlist-form').scrollIntoView()
   };
 
   return (
