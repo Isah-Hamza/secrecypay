@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import { ImSpinner2 } from "react-icons/im";
 import { toast } from "react-toastify";
 import axios from "axios";
-import Link from "next/link";
 
 const Form = () => {
   const [user, setUser] = useState({ email: "", fullname: "" });
   const [loading, setLoading] = useState(false);
 
-  // const endpoint = "http://localhost/secrecy-backend/server.php";
   const endpoint = "https://secrecypay.com/server/server.php";
 
   const successNotification = (msg) =>
